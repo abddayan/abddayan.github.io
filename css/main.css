@@ -1,0 +1,249 @@
+/*...*/
+html{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+/*top Navbar for Contacts and Icon */
+#dbIcon{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 15vw;
+	height: 10vh;
+	border-radius: 0 0 50% 0;
+	background-color: green;
+	background-image: url('../images/moon.png');
+	background-repeat: none;
+	cursor: pointer;
+}
+#dbTopNav{
+	clear: both;
+	position: absolute;
+	top: 0;
+	left: 20%;
+	width: 60%;
+	height: 5vh;
+	background: rgba(255,255,255,0.5);
+	color: #000;
+	z-index: 1000;
+	border-radius: 0 0 10px 10px
+}
+#contactSlot{
+	width: 70%;
+	height: 80%;
+	margin-top: 10%;
+	margin: 0 auto;
+	border: solid 1px transparent;
+	/*background-color: indigo;*/
+}
+.contactsHandles{
+	width: 3vw;
+	height: 3vh;
+	margin-right: 2vw;
+	margin-top: 0.3vh;
+	border: solid 1px transparent;
+	border-radius: 50%;
+	opacity: 0.7;
+}.contactsHandles:hover{opacity: 0.9;box-shadow: 1px 1px 5px darkgrey}
+#phNum{
+	display: inline-block;
+}
+#dbFacebook{
+	margin-left: 6vw
+}
+#dbMsg{outline: none;}a:visited{outline: none;}
+#navBar{
+	position: absolute;
+	top: 6vh;
+	left: 30%;
+	width: 40%;
+	height: 3vh;
+	background-color: rgba(0,0,0,0.5);
+	align-content: center;
+	z-index: 1000;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#navBar div h4{
+	display: inline;
+	color: darkorange;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+	margin: 5px;
+	padding: 2px;
+}
+#menuItems{
+	width: 95%;
+	margin: 0 auto;
+}
+#aboutUs{
+	position: absolute;
+	top: 12vh;
+	left: 7vw;
+	width: 22vw;
+	height: 30vh;
+	border: solid 1px transparent;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 0 10px 10px 10px;
+	z-index: 1000;
+	box-shadow: 0 0 5px grey;
+	display: none;
+}
+
+#abtTitle,#ImgTitle{
+	width: 70%;
+	margin: 0 auto;
+	color: #fff;
+	word-wrap: break-word;
+	font-size: 2vh
+}
+#abtTitle{height: 3vh}
+#abtContContainer{
+	width: 100%;
+	height: 27vh;
+	border-radius: 5px 5px 10px 10px;
+	background-image: repeating-radial-gradient(#fff,grey,darkgrey)
+}
+.abtContent{
+	width: 100%;
+	height: 27vh !important;
+	background-color: yellow;
+	margin-top: 0.2vh;
+	border-radius: 5px 5px 10px 10px!important;
+	box-shadow: 0 0 3px grey;
+	/*background-image: repeating-radial-gradient(#fff,grey 10%,darkgrey 35%)*/	
+	background-image: radial-gradient(#fff,grey,darkgrey)
+}
+#gtConnect{
+  background-image: url('../images/ContactUsBanner-300-194.png'); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  /*height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+#abtUsGetIntouch{
+	width: 80%;
+	height: 3vh;
+	margin: auto;
+	background-color: yellow;
+	box-shadow: 2px 2px 5px grey;
+	cursor: pointer;
+	padding-left: 20%;
+	border-radius: 5px;
+	color: red;
+	font-weight: bolder;
+	font-style: italic;
+	background-image: url('../images/Contact-us-192-50.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}#abtUsGetIntouch:hover{box-shadow: 2px 2px 5px darkgrey;}
+.abtContent h4{
+	width: 70%;
+	margin: 0 auto;
+}
+.abtContent p{
+	padding: 10px;
+}
+.imgNote{
+	position: absolute;
+	top: 15vh;
+	left: 65vw;
+	width: 30vw;
+	height: 50vh;
+	border: solid 1px transparent;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 10px 0 10px 10px;
+	box-shadow: 0 0 5px grey;
+	z-index: 1000;
+	word-wrap: break-word;
+}
+#ImgNcontent{
+		color: #fff;
+		padding: 5px;
+		letter-spacing: 0.2em;
+}
+#desTest{
+	position: absolute;
+	top: 200px;
+	left: 200px;
+	z-index: 10000;
+	width: 5vw;
+	height: 5vh;
+	background-color:red;
+	display: block;
+	visibility: visible;
+	border: solid 3px green;
+}
+#dbplay,#dbpause{
+	position: absolute;
+	top: 45vh;
+	left: 47vw;
+	cursor: pointer;
+	opacity: 0.5;
+	transition: 1s;
+}
+#dbplay:hover, #dbpause:hover{
+	opacity: 0.7;
+	background-color: rgba(255,255,255,0.5);
+}
+#dbplay{
+	display: none;
+}
+#dbprev{
+	position: absolute;
+	left: 1vw;
+	top: 45vh;
+	cursor: pointer;
+	transition: 3s;
+}
+#dbnext{
+	position: absolute;
+	left: 95vw;
+	top: 45vh;
+	cursor: pointer;
+	transition: 3s;
+}
+#dbprev:hover,#dbnext:hover{
+	background-color: rgba(255,255,255,0.5);
+}
+#dbfocus,#dbprop{
+	position: absolute;
+	top: 80vh;
+	left: 45vw;
+	cursor: pointer;
+
+}#dbprop{
+	left: 55vw;
+	background: red;
+	width: 15px;height: 10px;
+}
+#siContainer{
+	position: absolute;
+	top: 90vh;
+	left: 30vw;
+	width: 40vw;
+	height: 5vh;
+	border: solid 1px transparent;
+	background-color: blue;
+	align-items: center;
+}
+.slidIndicator{
+	width: 0;
+	height: 0;
+	border: solid 0.7vw red;
+	border-radius: 50%;
+	background-color: red;
+	z-index: 1000;
+	cursor: pointer;
+	display: inline-block;
+	margin: 0.3vw;	 
+}
+/*progress bar */
+.vegas-timer-progress{
+	background: #04f767!important;
+}
