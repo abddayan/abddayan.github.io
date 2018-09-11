@@ -94,8 +94,8 @@
     		$('#adMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
     			var wdSlides=$('body').vegas('options', 'slides');
-    			wdSlides.push({ src:'images/dbSlides/ad/1a.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    				{ src:'images/dbSlides/ad/1b.png',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			wdSlides.push({ src:'images/dbSlides/ad/1a.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    				{ src:'images/dbSlides/ad/1b.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{ src:'images/dbSlides/ad/1bv.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{ src:'images/dbSlides/ad/1cv.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{ src:'images/dbSlides/ad/1c.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
@@ -117,13 +117,13 @@
     		$('#mdMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
     			var wdSlides=$('body').vegas('options', 'slides');
-    			wdSlides.push({ src:'images/dbSlides/md/1.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    				{src:'images/dbSlides/md/2.png',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			wdSlides.push({ src:'images/dbSlides/md/1.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    				{src:'images/dbSlides/md/2.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/3.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/3.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/4.jpeg',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/5.jpeg',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/6.png',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{src:'images/dbSlides/md/6.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/7.jpg',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/8.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			);
