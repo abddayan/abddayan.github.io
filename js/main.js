@@ -14,19 +14,19 @@
 			    animation: [ 'kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight' ],
 			    // or animation: 'kenburns',
 			    slides: [
-			        { src:'images/dbSlides/ad/1a.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/2a.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/1b.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/2b.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/1c.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/2g.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/1e.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/2f.png', info: "Some information about this picture will be displayed here! Users can find out more." },
+			        { src:'images/dbSlides/ad/1a.PNG', info: "Some information about this picture will be displayed here! Users can find out more." },
+			        { src:'images/dbSlides/ad/2a.PNG', info: "Some information about this picture will be displayed here! Users can find out more." },
+			        { src:'images/dbSlides/ad/1b.PNG', info: "Some information about this picture will be displayed here! Users can find out more." },
+			        { src:'images/dbSlides/ad/2b.PNG', info: "Some information about this picture will be displayed here! Users can find out more." },
+			        { src:'images/dbSlides/ad/1c.PNG', info: "Some information about this picture will be displayed here! Users can find out more." },
+			        { src:'images/dbSlides/ad/2g.PNG', info: "Some information about this picture will be displayed here! Users can find out more." },
+			        { src:'images/dbSlides/ad/1e.PNG', info: "Some information about this picture will be displayed here! Users can find out more." },
+			        { src:'images/dbSlides/ad/2f.PNG', info: "Some information about this picture will be displayed here! Users can find out more." },
 			        { src:'images/dbSlides/md/4.jpeg', info: "Some information about this picture will be displayed here! Users can find out more." },
 			        { src:'images/dbSlides/md/5.jpeg', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/md/1.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/md/3.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/md/2.png', info: "Some information about this picture will be displayed here! Users can find out more." },
+			        { src:'images/dbSlides/md/1.PNG', info: "Some information about this picture will be displayed here! Users can find out more." },
+			        { src:'images/dbSlides/md/3.PNG', info: "Some information about this picture will be displayed here! Users can find out more." },
+			        { src:'images/dbSlides/md/2.PNG', info: "Some information about this picture will be displayed here! Users can find out more." },
 			        { src:'images/dbSlides/md/7.jpg', info: "Some information about this picture will be displayed here! Users can find out more." }
 			    ],
 			    /* init: function (globalSettings) {
@@ -74,7 +74,11 @@
     		$('#wdMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
     			var wdSlides=$('body').vegas('options', 'slides');
-    			wdSlides.push({ src: "images/afterRamadan3.jpg",info:"additon: RAMADAN KAREEM" },{ src: "images/Effects of Ramadan on Productivity and Consumption.jpg",info:"additon: RAMADAN KAREEM" },{ src: "images/afterRamadan2.jpg",transition: 'slideRight2', info:"additon: RAMADAN KAREEM" },{ src: "images/GhMYC-31-5-18-img1.jpg",info:"additon: RAMADAN KAREEM" },{ video: {
+    			wdSlides.push({ src: "images/wd/afterRamadan3.jpg",info:"additon: RAMADAN KAREEM" },
+				      { src: "images/wd/Effects of Ramadan on Productivity and Consumption.jpg",info:"additon: RAMADAN KAREEM" },
+				      { src: "images/wd/afterRamadan2.jpg",transition: 'slideRight2', info:"additon: RAMADAN KAREEM" },
+				      { src: "images/wd/GhMYC-31-5-18-img1.jpg",info:"additon: RAMADAN KAREEM" },
+				      { video: {
 			                src: [
 			                    'videos/IMG_0195.mp4',
 			                    //'/videos/video.webm',
@@ -94,22 +98,22 @@
     		$('#adMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
     			var wdSlides=$('body').vegas('options', 'slides');
-    			wdSlides.push({ src:'images/dbSlides/ad/1a.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    				{ src:'images/dbSlides/ad/1b.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1bv.png',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			wdSlides.push({ src:'images/dbSlides/ad/1a.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    				{ src:'images/dbSlides/ad/1b.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1bv.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{ src:'images/dbSlides/ad/1cv.png',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{ src:'images/dbSlides/ad/1c.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1d.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1e.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1f.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2a.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2b.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2c.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2c.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2d.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2e.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2f.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2g.png',info: "Some information about this picture will be displayed here! Users can find out more."})
+    			{ src:'images/dbSlides/ad/1d.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1e.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1f.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2a.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2b.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2c.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2c.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2d.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2e.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2f.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2g.PNG',info: "Some information about this picture will be displayed here! Users can find out more."})
     			;
     			$('body').vegas('options', 'transition', 'random').vegas('next');
     		});
@@ -117,15 +121,15 @@
     		$('#mdMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
     			var wdSlides=$('body').vegas('options', 'slides');
-    			wdSlides.push({ src:'images/dbSlides/md/1.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    				{src:'images/dbSlides/md/2.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/3.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/3.png',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			wdSlides.push({ src:'images/dbSlides/md/1.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    				{src:'images/dbSlides/md/2.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{src:'images/dbSlides/md/3.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{src:'images/dbSlides/md/3.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/4.jpeg',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/5.jpeg',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/6.png',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/7.jpg',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/8.png',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{src:'images/dbSlides/md/8.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			);
     			$('body').vegas('options', 'transition', 'random').vegas('next');
     		});
