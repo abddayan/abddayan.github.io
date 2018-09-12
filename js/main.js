@@ -74,7 +74,11 @@
     		$('#wdMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
     			var wdSlides=$('body').vegas('options', 'slides');
-    			wdSlides.push({ src: "images/afterRamadan3.jpg",info:"additon: RAMADAN KAREEM" },{ src: "images/Effects of Ramadan on Productivity and Consumption.jpg",info:"additon: RAMADAN KAREEM" },{ src: "images/afterRamadan2.jpg",transition: 'slideRight2', info:"additon: RAMADAN KAREEM" },{ src: "images/GhMYC-31-5-18-img1.jpg",info:"additon: RAMADAN KAREEM" },{ video: {
+    			wdSlides.push({ src: "images/wd/afterRamadan3.jpg",info:"additon: RAMADAN KAREEM" },
+				      { src: "images/wd/Effects of Ramadan on Productivity and Consumption.jpg",info:"additon: RAMADAN KAREEM" },
+				      { src: "images/wd/afterRamadan2.jpg",transition: 'slideRight2', info:"additon: RAMADAN KAREEM" },
+				      { src: "images/wd/GhMYC-31-5-18-img1.jpg",info:"additon: RAMADAN KAREEM" },
+				      { video: {
 			                src: [
 			                    'videos/IMG_0195.mp4',
 			                    //'/videos/video.webm',
@@ -97,8 +101,8 @@
     			wdSlides.push({ src:'images/dbSlides/ad/1a.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     				{ src:'images/dbSlides/ad/1b.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{ src:'images/dbSlides/ad/1bv.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1cv.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1c.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1cv.png',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1c.png',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{ src:'images/dbSlides/ad/1d.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{ src:'images/dbSlides/ad/1e.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{ src:'images/dbSlides/ad/1f.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
@@ -123,7 +127,7 @@
     			{src:'images/dbSlides/md/3.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/4.jpeg',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/5.jpeg',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/6.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{src:'images/dbSlides/md/6.png',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/7.jpg',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/8.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			);
