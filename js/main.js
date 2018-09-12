@@ -88,7 +88,7 @@
 			                mute: true,
 			                info:"additon: RAMADAN KAREEM"
 			            },
-			            delay: 30000,
+			            delay: 10000,
 			            transition: 'slideLeft',
 			            
 			        });
@@ -129,7 +129,7 @@
     			{src:'images/dbSlides/md/5.jpeg',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/6.png',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/7.jpg',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/8.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{src:'images/dbSlides/md/8.png',info: "Some information about this picture will be displayed here! Users can find out more."},
     			);
     			$('body').vegas('options', 'transition', 'random').vegas('next');
     		});
