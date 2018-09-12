@@ -17,6 +17,7 @@
 <!-- Add the new slick-theme.css if you want the default styling-->
 	<link rel="stylesheet" type="text/css" href="closeplugins/slick/slick-theme.css"/>
 	<link rel="stylesheet" type="text/css" href="css/jquery-te-1.4.0.css" />
+	<link rel="stylesheet" type="text/css" href="css/someToolTip.css">
 
 
     <!--scripts-->
@@ -29,7 +30,7 @@
 		<script src="js/jquery.easing.1.3.js"></script>
 		<script type="text/javascript" src="js/vegas.min.js"></script>
 		<script type="text/javascript" src="closeplugins/slick/slick.min.js"></script>
-		<script src="js//jquery.popupoverlay.js"></script>
+		<script src="js/jquery.popupoverlay.js"></script>
 		<script type="text/javascript" src="js/jquery-te-1.4.0.min.js"></script>
 	<!-- Le fav and touch icons -->
 	    <!--<link rel="shortcut icon" href="../assets/ico/favicon.ico">
@@ -38,28 +39,30 @@
 	    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 	-->
 </head>
-<body style="margin: 0;width: 100vw;height: 100vh;overflow: hidden; background-image: url('images/dawn-sun-mountain-landscape.jpg');" >
-	<span id="dbprev"><img src="images/overlays/leftArrow.png"></span>
-	<span id="dbnext"><img src="images/overlays/rightArrow.png"></span>
-	<span id="dbplay"><img src="images/overlays/play.png"></span>
-	<span id="dbpause"><img src="images/overlays/pause.png"></span>
+<body >
+	<span id="dbprev" class="tooltipping"><img src="images/overlays/leftArrow.png"></span>
+	<span id="dbnext" class="tooltipping"><img src="images/overlays/rightArrow.png"></span>
+	<span id="dbplay" class="tooltipping"><img src="images/overlays/play.png"></span>
+	<span id="dbpause" class="tooltipping"><img src="images/overlays/pause.png"></span>
 	<!--<span id="dbfocus"><img src="images/overlays/focus.png"></span>
 	<div id="dbprop"></div>-->
 	<!--<div id="didiv" style="width: 500px;height: 500px;margin: 0 auto;background-image: ; "></div>-->
 
 <!--Site Icon -->
-	<div id="dbIcon" style="color: #fff;font-weight: bolder;">ICON</div>
+	<div id="dbIcon" class="tooltipping" style="color: #fff;font-weight: bolder;">ICON</div>
 	<!--Top Contact bar-->
 	<div id="dbTopNav"><div id="PdbIcon"></div><div id="contactSlot">
-		<a href="#" id="dbFacebook"><img src="images/facebookBmGHsmh.png" class="contactsHandles"></a>
-		<a href="#" id="dbLinkeIn"><img src="images/linkedIn.jpg" class="contactsHandles"></a>
-		<a href="#" id="dbEmail"></a>
-		<a href="mailto:dyndayan7@gmail.com" id="dbMsg"><img src="images/emailUs.png" class="contactsHandles"></a><a href="tel:0501364421" id="dbTel"><img src="images/phone.png" class="contactsHandles"></a><b id="phNum">: +233501364421</b></div></div>
+		<a href="#" id="dbFacebook" class="tooltipping"><img src="images/facebookBmGHsmh.png" class="contactsHandles"></a>
+		<a href="#" id="dbLinkeIn" class="tooltipping"><img src="images/linkedIn.jpg" class="contactsHandles"></a>
+		<a href="mailto:dyndayan7@gmail.com" id="dbMsg" class="tooltipping"><img src="images/emailUs.png" class="contactsHandles"></a>
+		<a  id=""></a>
+		<a href="tel:+233501364421" id="dbTel" class="tooltipping"><img src="images/phone.png" class="contactsHandles"></a>
+		<b id="phNum">: +233501364421</b></div></div>
 <!--Menu bar -->
-		<div id="navBar"><div id="menuItems"><h4 id="wdMenu">Web Design</h4><h4 id="adMenu">Architectural Design</h4><h4 id="mdMenu">Map Design</h4></div></div>
+		<div id="navBar"><div id="menuItems"><h4 id="wdMenu" class="tooltipping">Web Design</h4><h4 id="adMenu" class="tooltipping">Architectural Design</h4><h4 id="mdMenu" class="tooltipping">Map Design</h4></div></div>
 <!--About Us -->
 		<div id="aboutUs"><h3 id="abtTitle">About Us</h3><div id="mapStatus" style="width: 100%"></div>
-			<div id="abtContContainer">
+			<div id="abtContContainer" class="tooltipping">
 				<div class="abtContent" ><h4>Brief Introduction</h4>
 					<p>Designbit is a digital designing venture</p>
 				</div>
@@ -73,13 +76,14 @@
 					<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d127048.49311080998!2d-0.16811407977502246!3d5.674718197885914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x102078a5400d3e29%3A0xccdf4b5d4026488b!2sTema!3m2!1d5.7348118999999995!2d0.0302354!4m5!1s0xfdfa0205c8a47a9%3A0x96835ac19d3c7dc!2sAmasaman!3m2!1d5.7062137!2d-0.3019281!5e0!3m2!1sen!2sgh!4v1536700456867" frameborder="0" style="border:0;width: 100%;height: 90%;border-radius: 0 0 10px 10px" allowfullscreen></iframe>
 
 				</div>
-				<div id="gtConnect" class="abtContent" ><h4>Connect with Us</h4>
+				<div id="gtConnect" class="abtContent tooltipping" ><h4>Connect with Us</h4>
 					<p><div id="abtUsGetIntouch">Get in Touch</div></p>
 				</div>
 			</div>
 <!--Image Descriptive Note Board -->
 		</div>
-		<div id="imgNote" class="imgNote"><h3 id="ImgTitle" class="imgTitle"></h3><div id="ImgNcontent" class="imgNcontent"></div></div>
+		<div id="imgNote" class="imgNote tooltipping"><h3 id="ImgTitle" class="imgTitle"></h3><div id="ImgNcontent" class="imgNcontent"></div></div>
+		<div id="galeryTheme" class="tooltipping"><h4>Gallery/Themes</h4></div>
 <!--Round/dot slide Indicators-->
 		<!--<div id="siContainer">
 			<div class="slidIndicator"></div>
@@ -118,83 +122,14 @@
 			    <div id="dbMsgSubmit">Submit</div>
 
 			  </div>
-<style type="text/css">
-	.tClose{
-		float: right;
-		padding: 0 5px 0 5px;
-		color: #fff;
-		font-size: 15px;
-		cursor: pointer;
-		border-radius: 50%;
-		border: solid 1px green;
-		margin: 0;
-	}.my_popup_close:hover{color: red;font-weight: bold;}
-	#dbMsgSubj{width:100%;font-size:1.5em; border-radius: 5px 5px 0 0}
-	#dbMsgSubj option{/* Text and background colour, blue on light gray */
-color:#fff;
-background-color:rgba(0,0,0); 
-padding:0.5em,
-}
-#dbMsgSubj[selected] { /* Text colour and font weight, red and bold */
-color:#000;
-font-weight:bold;
-}option:focus{outline:none;background-color: green; color: green}
-/*:focus {
-    outline:...}*/
-fieldset{
-	border-width:6px;
-	border-color: green;
-	margin: 0.5em;
-	padding-bottom: 0
-}
-legend{
-	border:2px dotted darkorange;
-	padding:0.2em;
-	color: #fff;
-	font-weight: bold;
-	border-radius: 15px
-}
-.textInputs, select, textarea{border-bottom: solid 2px green !important;}
 
-.textInputs{
-	border: solid 1px lightgreen;
-	width: 97%;
-	padding: 0.5em;
-	border-radius: 5px 5px 0 0;
+<!---Tooltip -->
+				<div id="tulTip" style="position:absolute;left: 35%;top:30%; border: solid 1px transparent;width: 20%; height: 15%;padding: 5%;background-color:#fff; box-shadow: 5px 5px 15px gray; border-radius: 10px; color: green;z-index: 2000; word-wrap: break-word; overflow:auto;font-size: 16pt"> You can hover around a menu or any part of the element to see its function. You should also click on any part of the website to see what it can do!<h4>Do nothing! I will go off in 30 seconds!</h4></div>
 
-}.textInputs:focus, select:focus, textarea:focus, option:focus{border-bottom: solid 4px blue!important;outline:dashed 1px darkorange; outline-color: darkorange}
-option{padding: 10px 2px 1px;}
-#dbMsgSubmit,.bClose{
-	height: 30px;
-	background-color: green;
-	border:solid 1px transparent;
-	padding: 10px;
-	color: #fff;
-	cursor: pointer;
-	align-content: center;
-
-}
-.bClose{
-	width: 20%;
-	height: 30px;
-	float: left;
-	padding-left: 15%;
-	color: rgba(255,255,255,0.7);
-}
-#dbMsgSubmit{
-	width: 30%;
-	float: right;
-	padding-left: 25%
-}#dbMsgSubmit:hover{font-weight: bold}
-</style>
-		
 		<script type="text/javascript">
-			
-
-	
-		</script>
-		<script type="text/javascript">
-
+				setTimeout(function(){
+					document.getElementById('tulTip').style.display="none";
+				}, 30000)
 /*			var x = document.getElementById("mapStatus");
 function getLocation() {
     if (navigator.geolocation) {
@@ -240,8 +175,10 @@ function showError(error) {
     }
 }*/
 		</script>
+		<script id="mScript" type="text/javascript" src="js/main.js"></script>
 		
-		<script type="text/javascript" src="js/main.js"></script>
+		<!--<script type="text/javascript" src="js/someToolTip.js"></script>-->
 		<!--<script src="https://maps.google.com/maps/api/js?key=AIzaSyDP3SUKJA0J5wPO1UDWK742t-TX1EYD7zg"></script>-->
+
 </body>
 </html>

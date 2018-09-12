@@ -1,8 +1,15 @@
 /*...*/
-html{
+html,body{
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
+	
+}
+body{
+	background-image: url('../images/dawn-sun-mountain-landscape.jpg');
+	background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
 }
 /*top Navbar for Contacts and Icon */
 #dbIcon{
@@ -14,7 +21,7 @@ html{
 	border-radius: 0 0 50% 0;
 	background-color: green;
 	background-image: url('../images/moon.png');
-	background-repeat: none;
+	background-repeat: no-repeat;
 	cursor: pointer;
 }
 #dbTopNav{
@@ -38,8 +45,8 @@ html{
 	/*background-color: indigo;*/
 }
 .contactsHandles{
-	width: 3vw;
-	height: 3vh;
+	width: 27px;
+	height: 27px;
 	margin-right: 2vw;
 	margin-top: 0.3vh;
 	border: solid 1px transparent;
@@ -167,6 +174,17 @@ html{
 		padding: 5px;
 		letter-spacing: 0.2em;
 }
+#galeryTheme{
+	position: absolute;
+	top: 68vh;
+	left: 75vw;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: underline;
+	text-decoration:underline overline wavy darkorange;
+	cursor: pointer;
+	font-size: 14pt;
+}#galeryTheme:hover{color: #fff;text-shadow: 1px 1px #000;text-decoration:underline overline wavy green;}
 #desTest{
 	position: absolute;
 	top: 200px;
@@ -247,3 +265,72 @@ html{
 .vegas-timer-progress{
 	background: #04f767!important;
 }
+/*Pop Overlay Form */
+.tClose{
+		position: fixed;
+		right: 32%;
+		padding: 0 5px 0 5px;
+		color: #fff;
+		font-size: 15px;
+		cursor: pointer;
+		border-radius: 50%;
+		border: solid 1px green;
+		margin: 0;
+	}.my_popup_close:hover{color: red;font-weight: bold;}
+	#dbMsgSubj{width:100%;font-size:1.5em; border-radius: 5px 5px 0 0}
+	#dbMsgSubj option{/* Text and background colour, blue on light gray */
+color:#fff;
+background-color:rgba(0,0,0); 
+padding:0.5em,
+}
+#dbMsgSubj[selected] { /* Text colour and font weight, red and bold */
+color:#000;
+font-weight:bold;
+}option:focus{outline:none;background-color: green; color: green}
+/*:focus {
+    outline:...}*/
+fieldset{
+	border-width:6px;
+	border-color: green;
+	margin: 0.5em;
+	padding-bottom: 0
+}
+legend{
+	border:2px dotted darkorange;
+	padding:0.2em;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 15px
+}
+.textInputs, select, textarea{border-bottom: solid 2px green !important;}
+
+.textInputs{
+	border: solid 1px lightgreen;
+	width: 97%;
+	padding: 0.5em;
+	border-radius: 5px 5px 0 0;
+
+}.textInputs:focus, select:focus, textarea:focus, option:focus, #jqte{border-bottom: solid 4px blue!important;outline:dashed 1px darkorange; outline-color: darkorange}
+option{padding: 10px 2px 1px;}
+#dbMsgSubmit,.bClose{
+	height: 30px;
+	background-color: green;
+	border:solid 1px transparent;
+	padding: 10px;
+	color: #fff;
+	cursor: pointer;
+	align-content: center;
+
+}
+.bClose{
+	width: 20%;
+	height: 30px;
+	float: left;
+	padding-left: 15%;
+	color: rgba(255,255,255,0.7);
+}
+#dbMsgSubmit{
+	width: 30%;
+	float: right;
+	padding-left: 25%
+}#dbMsgSubmit:hover{font-weight: bold}
