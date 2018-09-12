@@ -75,9 +75,9 @@
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
     			var wdSlides=$('body').vegas('options', 'slides');
     			wdSlides.push({ src: "images/wd/afterRamadan3.jpg",info:"additon: RAMADAN KAREEM" },
-				      { src: "images/wd/Effects of Ramadan on Productivity and Consumption.jpg",info:"additon: RAMADAN KAREEM" },
-				      { src: "images/wd/afterRamadan2.jpg",transition: 'slideRight2', info:"additon: RAMADAN KAREEM" },
-				      { src: "images/wd/GhMYC-31-5-18-img1.jpg",info:"additon: RAMADAN KAREEM" },
+				      { src: "images/wd/Effects of Ramadan on Productivity and Consumption.jpeg",info:"additon: RAMADAN KAREEM" },
+				      { src: "images/wd/afterRamadan2.jpeg",transition: 'slideRight2', info:"additon: RAMADAN KAREEM" },
+				      { src: "images/wd/GhMYC-31-5-18-img1.jpeg",info:"additon: RAMADAN KAREEM" },
 				      { video: {
 			                src: [
 			                    'videos/IMG_0195.mp4',
