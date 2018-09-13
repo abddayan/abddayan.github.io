@@ -74,7 +74,15 @@
     		$('#wdMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
     			var wdSlides=$('body').vegas('options', 'slides');
+<<<<<<< HEAD
     			wdSlides.push({ src: "images/afterRamadan3.jpg",info:"additon: RAMADAN KAREEM" },{ src: "images/Effects of Ramadan on Productivity and Consumption.jpg",info:"additon: RAMADAN KAREEM" },{ src: "images/afterRamadan2.jpg",transition: 'slideRight2', info:"additon: RAMADAN KAREEM" },{ src: "images/GhMYC-31-5-18-img1.jpg",info:"additon: RAMADAN KAREEM" },{ video: {
+=======
+    			wdSlides.push({ src: "images/dbSlides/wd/afterRamadan3.jpg",info:"additon: RAMADAN KAREEM" },
+				      { src: "images/dbSlides/wd/Effects of Ramadan on Productivity and Consumption.jpg",info:"additon: RAMADAN KAREEM" },
+				      { src: "images/dbSlides/wd/afterRamadan2.jpg",transition: 'slideRight2', info:"additon: RAMADAN KAREEM" },
+				      { src: "images/dbSlides/wd/GhMYC-31-5-18-img1.jpg",info:"additon: RAMADAN KAREEM" },
+				      { video: {
+>>>>>>> cafc6f94b8a9e31b2dfa59dd3b8d727b8096270a
 			                src: [
 			                    'videos/IMG_0195.mp4',
 			                    //'/videos/video.webm',
@@ -84,7 +92,7 @@
 			                mute: true,
 			                info:"additon: RAMADAN KAREEM"
 			            },
-			            delay: 30000,
+			            delay: 10000,
 			            transition: 'slideLeft',
 			            
 			        });
@@ -94,23 +102,24 @@
     		$('#adMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
     			var wdSlides=$('body').vegas('options', 'slides');
-    			wdSlides.push({ src:'images/dbSlides/ad/1a.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    				{ src:'images/dbSlides/ad/1b.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1bv.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1cv.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1c.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1d.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1e.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1f.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2a.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2b.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2c.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2c.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2d.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2e.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2f.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2g.png',info: "Some information about this picture will be displayed here! Users can find out more."})
-    			;
+
+    			wdSlides.push({ src:'images/dbSlides/ad/1a.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    				{ src:'images/dbSlides/ad/1b.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1bv.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1cv.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1c.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1d.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1e.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1f.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2a.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2b.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2c.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2c.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2d.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2e.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2f.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/2g.PNG',info: "Some information about this picture will be displayed here! Users can find out more."});
+    			
     			$('body').vegas('options', 'transition', 'random').vegas('next');
     		});
     		//Change slides set to only Map Design set
