@@ -74,15 +74,12 @@
     		$('#wdMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
     			var wdSlides=$('body').vegas('options', 'slides');
-<<<<<<< HEAD
-    			wdSlides.push({ src: "images/afterRamadan3.jpg",info:"additon: RAMADAN KAREEM" },{ src: "images/Effects of Ramadan on Productivity and Consumption.jpg",info:"additon: RAMADAN KAREEM" },{ src: "images/afterRamadan2.jpg",transition: 'slideRight2', info:"additon: RAMADAN KAREEM" },{ src: "images/GhMYC-31-5-18-img1.jpg",info:"additon: RAMADAN KAREEM" },{ video: {
-=======
+
     			wdSlides.push({ src: "images/dbSlides/wd/afterRamadan3.jpg",info:"additon: RAMADAN KAREEM" },
 				      { src: "images/dbSlides/wd/Effects of Ramadan on Productivity and Consumption.jpg",info:"additon: RAMADAN KAREEM" },
 				      { src: "images/dbSlides/wd/afterRamadan2.jpg",transition: 'slideRight2', info:"additon: RAMADAN KAREEM" },
 				      { src: "images/dbSlides/wd/GhMYC-31-5-18-img1.jpg",info:"additon: RAMADAN KAREEM" },
 				      { video: {
->>>>>>> cafc6f94b8a9e31b2dfa59dd3b8d727b8096270a
 			                src: [
 			                    'videos/IMG_0195.mp4',
 			                    //'/videos/video.webm',
