@@ -123,10 +123,9 @@
     		$('#mdMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
     			var wdSlides=$('body').vegas('options', 'slides');
-    			wdSlides.push({ src:'images/dbSlides/md/1.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    				{src:'images/dbSlides/md/2.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/3.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/3.png',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			wdSlides.push({ src:'images/dbSlides/md/1.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    				{src:'images/dbSlides/md/2.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{src:'images/dbSlides/md/3.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/4.jpeg',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/5.jpeg',info: "Some information about this picture will be displayed here! Users can find out more."},
     			{src:'images/dbSlides/md/6.png',info: "Some information about this picture will be displayed here! Users can find out more."},
