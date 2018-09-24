@@ -14,20 +14,20 @@
 			    animation: [ 'kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight' ],
 			    // or animation: 'kenburns',
 			    slides: [
-			        { src:'images/dbSlides/ad/1a.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/2a.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/1b.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/2b.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/1c.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/2g.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/1e.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/ad/2f.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/md/4.jpeg', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/md/5.jpeg', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/md/1.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/md/3.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/md/2.png', info: "Some information about this picture will be displayed here! Users can find out more." },
-			        { src:'images/dbSlides/md/7.jpg', info: "Some information about this picture will be displayed here! Users can find out more." }
+			        { src:'images/dbSlides/ad/1a.PNG', info: { name: "Slide Name", category: "Architectural Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/ad/2a.PNG', info: { name: "Slide Name", category: "Architectural Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/ad/1b.PNG', info: { name: "Slide Name", category: "Architectural Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/ad/2b.PNG', info: { name: "Slide Name", category: "Architectural Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/ad/1c.PNG', info: { name: "Slide Name", category: "Architectural Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/ad/2g.PNG', info: { name: "Slide Name", category: "Architectural Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/ad/1e.PNG', info: { name: "Slide Name", category: "Architectural Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/ad/2f.PNG', info: { name: "Slide Name", category: "Architectural Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/md/4.jpeg', info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/md/5.jpeg', info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/md/1.PNG', info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/md/3.PNG', info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/md/2.PNG', info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more." }},
+			        { src:'images/dbSlides/md/7.jpg', info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more."} }
 			    ],
 			    /* init: function (globalSettings) {
 			        alert("Init");
@@ -39,9 +39,30 @@
 			    	var imgName=slideSettings.src; //alert(slideSettings.src)
 			    	var inform;
 			    	var vtype= typeof imgName
-			    	if(imgName){ imgName=slideSettings.src; inform=slideSettings.info} else {imgName=slideSettings.video.src; inform=slideSettings.video.info}
+			    	if(imgName){ 
+			    		imgName=slideSettings.src; inform=slideSettings.info.description;
+				    		//launch a call to the menu underline function
+				    	var category=slideSettings.info.category;
+				    	if (window.innerWidth>=1366&&window.innerHeight>=635) {//alert(window.innerWidth+"<br/>"+window.innerHeight)
+				    	menuLine(category);//alert(window.innerWidth+" "+window.innerHeight);
+				    	}else{
+				    		$('#navBar').css({width:"auto"})
+				    		menuColor(category)
+				    	}
+			    	} else if(!imgName) {
+			    		imgName=slideSettings.video.src; inform=slideSettings.video.info.description;
+			    		//launch a call to the menu underline function
+			    	var category=slideSettings.video.info.category;
+			    	if (window.innerWidth>=1366&&window.innerHeight>=635) {
+			    	menuLine(category);//alert(window.innerWidth+" "+window.innerHeight);
+			    	}else{
+				    		$('#navBar').css({width:"auto"});
+			    		menuColor(category)
+			    	}
+			    	}
 			        document.getElementById("ImgTitle").innerHTML="Slide index " + index + " image " + imgName;
-			    	$('#ImgNcontent').html(inform)
+			    	$('#ImgNcontent').html(inform);			    	
+
 			    },
 			    /*end:[a function to call on end of all slides]...,
 			    pause: [a function to call on end of all slides]...*/
@@ -50,10 +71,16 @@
 			//next and previous button
 				$('#dbprev').on('click', function () {
 				    $('body').vegas('options', 'transition', 'slideRight2').vegas('previous');
+				    setTimeout(function(){
+				    	$('body').vegas('options', 'transition', 'random')
+				    },3000);
 				});
 
 				$('#dbnext').on('click', function () {
 				    $('body').vegas('options', 'transition', 'slideLeft2').vegas('next');
+				    setTimeout(function(){
+				    	$('body').vegas('options', 'transition', 'random')
+				    },3000);
 				});
 			//check for a Navigator
 				$.vegas.isVideoCompatible = function () {
@@ -74,67 +101,63 @@
     		$('#wdMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
     			var wdSlides=$('body').vegas('options', 'slides');
-<<<<<<< HEAD
-    			wdSlides.push({ src: "images/afterRamadan3.jpg",info:"additon: RAMADAN KAREEM" },{ src: "images/Effects of Ramadan on Productivity and Consumption.jpg",info:"additon: RAMADAN KAREEM" },{ src: "images/afterRamadan2.jpg",transition: 'slideRight2', info:"additon: RAMADAN KAREEM" },{ src: "images/GhMYC-31-5-18-img1.jpg",info:"additon: RAMADAN KAREEM" },{ video: {
-=======
-    			wdSlides.push({ src: "images/dbSlides/wd/afterRamadan3.jpg",info:"additon: RAMADAN KAREEM" },
-				      { src: "images/dbSlides/wd/Effects of Ramadan on Productivity and Consumption.jpg",info:"additon: RAMADAN KAREEM" },
-				      { src: "images/dbSlides/wd/afterRamadan2.jpg",transition: 'slideRight2', info:"additon: RAMADAN KAREEM" },
-				      { src: "images/dbSlides/wd/GhMYC-31-5-18-img1.jpg",info:"additon: RAMADAN KAREEM" },
-				      { video: {
->>>>>>> cafc6f94b8a9e31b2dfa59dd3b8d727b8096270a
-			                src: [
-			                    'videos/IMG_0195.mp4',
-			                    //'/videos/video.webm',
-			                    //'/videos/video.ogv'
-			                ],
-			                loop: false,
-			                mute: true,
-			                info:"additon: RAMADAN KAREEM"
-			            },
-			            delay: 10000,
-			            transition: 'slideLeft',
-			            
-			        });
+    			wdSlides.push({ src: "images/afterRamadan3.jpg",info: { name: "Slide Name", category: "Web Design", description: "additon: RAMADAN KAREEM"} },
+			    				{ src: "images/Effects of Ramadan on Productivity and Consumption.jpg",info: { name: "Slide Name", category: "Web Design", description: "additon: RAMADAN KAREEM"} },
+			    				{ src: "images/afterRamadan2.jpg",transition: 'slideRight2', info: { name: "Slide Name", category: "Web Design", description: "additon: RAMADAN KAREEM"} },
+			    				{ src: "images/GhMYC-31-5-18-img1.jpg",info: { name: "Slide Name", category: "Web Design", description: "additon: RAMADAN KAREEM"} },
+			    				{ video: {
+						                src: [
+						                    'videos/IMG_0195.mp4',
+						                    //'/videos/video.webm',
+						                    //'/videos/video.ogv'
+						                ],
+						                loop: false,
+						                mute: true,
+						                info: { name: "Slide Name", category: "Web Design", description: "additon: RAMADAN KAREEM"}
+						            },
+						            delay: 30000,
+						            transition: 'slideLeft',
+						            
+						        });
     			$('body').vegas('options', 'transition', 'random').vegas('next');
     		});
     		//Change slides set to only Architectural Design set
     		$('#adMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
-    			var wdSlides=$('body').vegas('options', 'slides');
-
-    			wdSlides.push({ src:'images/dbSlides/ad/1a.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    				{ src:'images/dbSlides/ad/1b.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1bv.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1cv.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1c.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1d.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1e.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/1f.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2a.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2b.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2c.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2c.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2d.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2e.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2f.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{ src:'images/dbSlides/ad/2g.PNG',info: "Some information about this picture will be displayed here! Users can find out more."});
-    			
+    			var adSlides=$('body').vegas('options', 'slides');
+    			adSlides.push(
+    			{ src:'images/dbSlides/ad/1a.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1b.PNG',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			{ src:'images/dbSlides/ad/1bv.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/1cv.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/1c.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/1d.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/1e.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/1f.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/2a.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/2b.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/2c.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/2c.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/2d.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/2e.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/2f.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} },
+    			{ src:'images/dbSlides/ad/2g.PNG',info: { name: "Slide Name", category: "Architectural Design", description:  "Some information about this picture will be displayed here! Users can find out more."} })
+    			;
     			$('body').vegas('options', 'transition', 'random').vegas('next');
     		});
     		//Change slides set to only Map Design set
     		$('#mdMenu').on('click', function(){
     		$('body').vegas('options', 'slides',[]);//alert(slides[slides.length-1].src)
-    			var wdSlides=$('body').vegas('options', 'slides');
-    			wdSlides.push({ src:'images/dbSlides/md/1.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    				{src:'images/dbSlides/md/2.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/3.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/3.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/4.jpeg',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/5.jpeg',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/6.png',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/7.jpg',info: "Some information about this picture will be displayed here! Users can find out more."},
-    			{src:'images/dbSlides/md/8.png',info: "Some information about this picture will be displayed here! Users can find out more."},
+    			var mdSlides=$('body').vegas('options', 'slides');
+    			mdSlides.push(
+    			{ src:'images/dbSlides/md/1.PNG',info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more."} },
+    			{src:'images/dbSlides/md/2.PNG',info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more."} },
+    			{src:'images/dbSlides/md/3.PNG',info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more."} },
+    			{src:'images/dbSlides/md/4.jpeg',info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more."} },
+    			{src:'images/dbSlides/md/5.jpeg',info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more."} },
+    			{src:'images/dbSlides/md/6.png',info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more."} },
+    			{src:'images/dbSlides/md/7.jpg',info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more."} },
+    			{src:'images/dbSlides/md/8.png',info: { name: "Slide Name", category: "Map Design", description: "Some information about this picture will be displayed here! Users can find out more."} },
     			);
     			$('body').vegas('options', 'transition', 'random').vegas('next');
     		});
@@ -242,94 +265,7 @@ $(document).ready(function(){
 				}, 1000)
 			});
 //
-		//Popup Overlay
-				$(document).ready(function() {
-	      // Initialize the plugin
-	      $('#my_popup').popup({
-	      	type: "overlay",
-	      	autoopen: false,
-	      	openelement: "#dbMsg",
-	      	focuselement:"#dbMsgFrom",
-	      	keepfocus: true,
-	      	blur: false,
-	      	escape: true,
-	      	scrolllock: true,
-	      	background: true,
-	      	opacity: 0.9,
-	      });
-
-	    });
-//
-//Popup Overlay Textarea input field
-			$(document).ready(function(){
-				 $("#dbMainMessage").jqte({
-				 	b: true,
-					br: false,
-					//button: "SEND",
-					center: true,
-					color: false,
-					/*css: "dbMainMessage",*/
-					fsize: true,
-					fsizes: ["10", "15", "20"],
-					funit: "px",
-					format: true,
-					formats: [
-							  ["p","Normal"],
-							  /*["h1","Header 1"],*/
-							  ["h2","Header 2"],
-							  ["h3","Header 3"],
-							  ["h4","Header 4"],
-							 /* ["h5","Header 5"],
-							  ["h6","Header 6"],
-							  ["pre","Preformatted"]*/
-							 ],
-					i: false,
-					indent: false,
-					link: true,
-					linktypes: ["Web URL", "E-mail", "Picture"],
-					left: true,
-					ol: true,
-					outdent: false,
-					p: true,
-					placeholder: "Please Write Your Message",
-					remove: false,
-					right: true,
-					rule: false,
-					source: false,
-					status: true,
-					sub: false,
-					strike: false,
-					sup: false,
-					title: true,
-					/*titletext:[
-						        {title:"Text Format"},
-						        {title:"Font Size"},
-						        {title:"Select Color"},
-						        {title:"Bold",hotkey:"B"},
-						        {title:"Italic",hotkey:"I"},
-						        {title:"Underline",hotkey:"U"},
-						        {title:"Ordered List",hotkey:"."},
-						        {title:"Unordered List",hotkey:","},
-						        {title:"Subscript",hotkey:"down arrow"},
-						        {title:"Superscript",hotkey:"up arrow"},
-						        {title:"Outdent",hotkey:"left arrow"},
-						        {title:"Indent",hotkey:"right arrow"},
-						        {title:"Justify Left"},
-						        {title:"Justify Center"},
-						        {title:"Justify Right"},
-						        {title:"Strike Through",hotkey:"K"},
-						        {title:"Add Link",hotkey:"L"},
-						        {title:"Remove Link",hotkey:""},
-						        {title:"Cleaner Style",hotkey:"Delete"},
-						        {title:"Horizontal Rule",hotkey:"H"},
-						        {title:"Source",hotkey:""}
-						     ],*/
-					u: false,
-					ul: false,
-					unlink: true
-				 });
-			});
-
+		
 //
 //Tool Tip
 /*$(document).ready(function() {
@@ -357,8 +293,8 @@ $(document).ready(function(){
 
 	    });*/
 //
-
-$(document).ready(function() {
+//add tooltip functionality
+/*$(document).ready(function() {
 	$('.tooltipping').each(function(){
 		var objId=$(this).attr('id');
 		$(this).attr('title', tooltipContent[objId]);
@@ -372,7 +308,7 @@ $(document).ready(function() {
 	var mScript = document.getElementById('mScript');
 	bodyTag.append(script);
 	bodyTag.insertBefore(script, mScript);
-})
+})*/
 //
 
 //tooltip contents
@@ -398,6 +334,45 @@ var tooltipContent = {
 	galeryTheme: "I'm not yet functional, but when I'm ready, you can click on me so I will take you strait to a gallery or theme page where you can view the different designs that we offer",
 	//About Us
 	abtContContainer: "I'm a moving slides of information. If you want an read more about any slide you can do these: 1. Hover over me stop sliding. 2. You can drag on me-- keep dragging until you reach the slide you want.",
-	abtUsGetIntouch: "I'm clickeable. You can click on me and see what I can do. Try it."
+	abtUsGetIntouch: "I'm clickeable. You can click on me and see what I can do. Try it.",
+	imgNmore: "I'm a button you can click on to read more about any image category. You can fine more information about the general and specific image design information where I would be taking you to. But for now, I'm still under construction.",
+	dbMore: "I'm not yet fully functional. But when complete I can lead you to a more informative page for our services"
 }
 //alert(tooltiContent.abtContContainer);
+//
+function menuLine(category){
+	 		$('#wdMenu,#adMenu,#mdMenu').css('color','darkorange');
+			if (category=="Web Design") {
+				$('.dbLavalamp').css({
+					width:'83px',
+					left: 0,
+					marginLeft: '1.68vw'
+				});
+			}
+			if (category=="Architectural Design") {
+				$('.dbLavalamp').css({
+					width: '143px',
+					left: '8.4vw',
+					marginLeft: '1.5vw'
+				})
+			}
+			if (category=="Map Design") {
+				$('.dbLavalamp').css({
+					width: '84px',
+					left: '22vw',
+					marginLeft: '0.65vw'
+				})
+			}
+		}
+function menuColor(category){ 
+			$('#wdMenu,#adMenu,#mdMenu').css('color','darkorange');
+			if (category=="Web Design") {
+				$('#wdMenu').css('color','#fff');
+			}
+			if (category=="Architectural Design") {
+				$('#adMenu').css('color','#fff');
+			}
+			if (category=="Map Design") {
+				$('#mdMenu').css('color','#fff');
+			}
+}

@@ -19,34 +19,47 @@ body{
 	width: 15vw;
 	height: 10vh;
 	border-radius: 0 0 50% 0;
-	background-color: green;
-	background-image: url('../images/moon.png');
+	/*background-color: green;*/
 	background-repeat: no-repeat;
 	cursor: pointer;
 }
 #dbTopNav{
 	clear: both;
 	position: absolute;
-	top: 0;
 	left: 20%;
+	top: 0;
 	width: 60%;
-	height: 5vh;
-	background: rgba(255,255,255,0.5);
+	background: rgba(255,255,255,0.8);
 	color: #000;
 	z-index: 1000;
 	border-radius: 0 0 10px 10px
 }
+@media(max-width: 935px){
+	#dbTopNav{
+		position: fixed;
+		left: unset;
+		right: 0;
+		width: auto;
+		border-radius: 0 0 0 10px
+	}
+	#contactSlot{
+		width: 100% !important;
+	}
+}
+@media(max-width: 600px){
+	#phNum{
+		display: none!important;
+	}
+}
 #contactSlot{
 	width: 70%;
-	height: 80%;
-	margin-top: 10%;
 	margin: 0 auto;
 	border: solid 1px transparent;
 	/*background-color: indigo;*/
 }
 .contactsHandles{
-	width: 27px;
-	height: 27px;
+	width: 25px;
+	height: 25px;
 	margin-right: 2vw;
 	margin-top: 0.3vh;
 	border: solid 1px transparent;
@@ -63,10 +76,8 @@ body{
 #navBar{
 	position: absolute;
 	top: 6vh;
-	left: 30%;
-	width: 40%;
-	height: 3vh;
-	background-color: rgba(0,0,0,0.5);
+	left: 0;
+	width: 100% !important;
 	align-content: center;
 	z-index: 1000;
 	padding-top: 5px;
@@ -78,13 +89,25 @@ body{
 	font-weight: bold;
 	text-decoration: underline;
 	cursor: pointer;
-	margin: 5px;
-	padding: 2px;
+	margin: 1vw;
+	padding: 0.2vw;
+	align-items: center;
 }
 #menuItems{
-	width: 95%;
+	position: relative;
+	width: fit-content;
 	margin: 0 auto;
+	padding: 5px;
+	text-align: center;
+	background-color: rgba(0,0,0,1);
 }
+.dbLavalamp{
+	height: 5px; margin:1vw;margin-top:0;
+	position:absolute;
+	background-color: #fff;
+	transition: 2s;
+	width: 6.15vw
+	}@media(max-width: 1200px){.dbLavalamp{display: none;}}
 #aboutUs{
 	position: absolute;
 	top: 12vh;
@@ -99,7 +122,7 @@ body{
 	display: none;
 }
 
-#abtTitle,#ImgTitle{
+#abtTitle{
 	width: 70%;
 	margin: 0 auto;
 	color: #fff;
@@ -111,7 +134,12 @@ body{
 	width: 100%;
 	height: 27vh;
 	border-radius: 5px 5px 10px 10px;
-	background-image: repeating-radial-gradient(#fff,grey,darkgrey)
+	background-image: radial-gradient(#fff,grey,darkgrey);
+	cursor: all-scroll;
+	background-image: url('../images/loading5.GIF');
+			background-repeat: no-repeat;
+			background-origin: content-box;
+			background-position: center;
 }
 .abtContent{
 	width: 100%;
@@ -169,10 +197,37 @@ body{
 	z-index: 1000;
 	word-wrap: break-word;
 }
+#ImgTitle{width: 95%;
+	height: 10%;
+	margin: 0 auto;
+	color: #fff;
+	word-wrap: break-word;
+	font-size: 14pt}
 #ImgNcontent{
 		color: #fff;
-		padding: 5px;
+		padding: 10px;
 		letter-spacing: 0.2em;
+		height: 65%
+
+}
+#imgNmore{
+	width: 90%;height: 5%;border:solid 1px green;
+	margin: 0 auto;
+	padding-top:0;
+	padding-bottom:6%;
+	border-radius: 10px;
+	box-shadow: 3px 3px 15px; 
+	cursor: pointer;
+	text-align:center;
+	border-top: 1px solid #fff;
+	border-right:solid 1px #E88180;
+	border-right:solid 1px #FF4400;
+	border-bottom:solid 1px #0044C4;
+	text-shadow: 0 1px rgba( 0, 0, 0, .5 );
+	font-size: 2em;
+	font-weight: bolder;
+	font-style: italic;
+
 }
 #galeryTheme{
 	position: absolute;
@@ -184,7 +239,16 @@ body{
 	text-decoration:underline overline wavy darkorange;
 	cursor: pointer;
 	font-size: 14pt;
-}#galeryTheme:hover{color: #fff;text-shadow: 1px 1px #000;text-decoration:underline overline wavy green;}
+	color: rgba(255,0,0,0.8);
+}#galeryTheme:hover,#galeryTheme h4:hover{
+	color: #fff;text-shadow: 1px 1px #000;
+	text-decoration:underline overline wavy green;
+	
+}#galeryTheme h4{background-color: rgba(0,0,0,0.8);}#galeryTheme h4:hover{background-color: rgba(0,0,0,1)}
+#galleryLink{
+	color: #000;
+	text-decoration: none;
+}
 #desTest{
 	position: absolute;
 	top: 200px;
@@ -204,10 +268,12 @@ body{
 	cursor: pointer;
 	opacity: 0.5;
 	transition: 1s;
+	border-radius: 5px;
 }
 #dbplay:hover, #dbpause:hover{
 	opacity: 0.7;
 	background-color: rgba(255,255,255,0.5);
+
 }
 #dbplay{
 	display: none;
@@ -218,6 +284,7 @@ body{
 	top: 45vh;
 	cursor: pointer;
 	transition: 3s;
+	border-radius: 5px;
 }
 #dbnext{
 	position: absolute;
@@ -225,6 +292,7 @@ body{
 	top: 45vh;
 	cursor: pointer;
 	transition: 3s;
+	border-radius: 5px;
 }
 #dbprev:hover,#dbnext:hover{
 	background-color: rgba(255,255,255,0.5);
@@ -262,13 +330,19 @@ body{
 	margin: 0.3vw;	 
 }
 /*progress bar */
+.vegas-timer{
+	height: 10px !important;
+}
+/*.vegas-timer-running{}*/
 .vegas-timer-progress{
-	background: #04f767!important;
+	background-image: radial-gradient(#0f0,#0044C4,#FF44C4)!important;
+	/*background: #04f767!important;*/
+	height: 10px !important;
 }
 /*Pop Overlay Form */
 .tClose{
-		position: fixed;
-		right: 32%;
+		float: right;
+		right: 32vw;
 		padding: 0 5px 0 5px;
 		color: #fff;
 		font-size: 15px;
@@ -310,7 +384,7 @@ legend{
 	padding: 0.5em;
 	border-radius: 5px 5px 0 0;
 
-}.textInputs:focus, select:focus, textarea:focus, option:focus, #jqte{border-bottom: solid 4px blue!important;outline:dashed 1px darkorange; outline-color: darkorange}
+}.textInputs:focus, select:focus, textarea:focus, option:focus{border-bottom: solid 4px blue!important;outline:dashed 1px darkorange; outline-color: darkorange}
 option{padding: 10px 2px 1px;}
 #dbMsgSubmit,.bClose{
 	height: 30px;

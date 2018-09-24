@@ -18,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="closeplugins/slick/slick-theme.css"/>
 	<link rel="stylesheet" type="text/css" href="css/jquery-te-1.4.0.css" />
 	<link rel="stylesheet" type="text/css" href="css/someToolTip.css">
-
+	<link rel="stylesheet" type="text/css" href="css/toastr.min.css">	
 
     <!--scripts-->
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -32,6 +32,9 @@
 		<script type="text/javascript" src="closeplugins/slick/slick.min.js"></script>
 		<script src="js/jquery.popupoverlay.js"></script>
 		<script type="text/javascript" src="js/jquery-te-1.4.0.min.js"></script>
+		<script type="text/javascript" src="js/TweenMax.min.js"></script>
+		<script type="text/javascript" src="js/fabric.min.js"></script>
+		<script type="text/javascript" src="js/toastr.min.js"></script>
 	<!-- Le fav and touch icons -->
 	    <!--<link rel="shortcut icon" href="../assets/ico/favicon.ico">
 	    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
@@ -39,17 +42,18 @@
 	    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 	-->
 </head>
-<body >
-	<span id="dbprev" class="tooltipping"><img src="images/overlays/leftArrow.png"></span>
-	<span id="dbnext" class="tooltipping"><img src="images/overlays/rightArrow.png"></span>
-	<span id="dbplay" class="tooltipping"><img src="images/overlays/play.png"></span>
-	<span id="dbpause" class="tooltipping"><img src="images/overlays/pause.png"></span>
+<body onload="dbNotifications()">
+	<section>
+	<div id="dbprev" class="tooltipping"><img src="images/overlays/leftArrow.png"></div>
+	<div id="dbnext" class="tooltipping"><img src="images/overlays/rightArrow.png"></div>
+	<div id="dbplay" class="tooltipping"><img src="images/overlays/play.png"></div>
+	<div id="dbpause" class="tooltipping"><img src="images/overlays/pause.png"></div>
 	<!--<span id="dbfocus"><img src="images/overlays/focus.png"></span>
 	<div id="dbprop"></div>-->
 	<!--<div id="didiv" style="width: 500px;height: 500px;margin: 0 auto;background-image: ; "></div>-->
 
 <!--Site Icon -->
-	<div id="dbIcon" class="tooltipping" style="color: #fff;font-weight: bolder;">ICON</div>
+	<Canvas id="dbIcon" class="tooltipping" style="color: #fff;font-weight: bolder;">ICON</Canvas>
 	<!--Top Contact bar-->
 	<div id="dbTopNav"><div id="PdbIcon"></div><div id="contactSlot">
 		<a href="#" id="dbFacebook" class="tooltipping"><img src="images/facebookBmGHsmh.png" class="contactsHandles"></a>
@@ -57,9 +61,16 @@
 		<a href="mailto:dyndayan7@gmail.com" id="dbMsg" class="tooltipping"><img src="images/emailUs.png" class="contactsHandles"></a>
 		<a  id=""></a>
 		<a href="tel:+233501364421" id="dbTel" class="tooltipping"><img src="images/phone.png" class="contactsHandles"></a>
-		<b id="phNum">: +233501364421</b></div></div>
+		<b id="phNum">: +233501364421</b></div>
+	</div>
 <!--Menu bar -->
-		<div id="navBar"><div id="menuItems"><h4 id="wdMenu" class="tooltipping">Web Design</h4><h4 id="adMenu" class="tooltipping">Architectural Design</h4><h4 id="mdMenu" class="tooltipping">Map Design</h4></div></div>
+		<div id="navBar">
+			<div id="menuItems">
+				<h4 id="wdMenu" class="tooltipping">Web Design</h4><h4 id="adMenu" class="tooltipping">Architectural Design</h4><h4 id="mdMenu" class="tooltipping">Map Design</h4><a href="#>"><h4 id="dbMore" class="tooltipping">More>></h4></a>
+				<div class="dbLavalamp"></div>
+			</div>
+		</div>
+</section>
 <!--About Us -->
 		<div id="aboutUs"><h3 id="abtTitle">About Us</h3><div id="mapStatus" style="width: 100%"></div>
 			<div id="abtContContainer" class="tooltipping">
@@ -82,8 +93,9 @@
 			</div>
 <!--Image Descriptive Note Board -->
 		</div>
-		<div id="imgNote" class="imgNote tooltipping"><h3 id="ImgTitle" class="imgTitle"></h3><div id="ImgNcontent" class="imgNcontent"></div></div>
-		<div id="galeryTheme" class="tooltipping"><h4>Gallery/Themes</h4></div>
+		<div id="imgNote" class="imgNote tooltipping"><h3 id="ImgTitle" class="imgTitle"></h3><div id="ImgNcontent" class="imgNcontent"></div><div id="imgNmore" class="tooltipping">more</div>
+		</div>
+		<a href="pages/gallery.html" id="galleryLink"><div id="galeryTheme" class="tooltipping"><h4>Gallery/Themes</h4></div></a>
 <!--Round/dot slide Indicators-->
 		<!--<div id="siContainer">
 			<div class="slidIndicator"></div>
@@ -98,7 +110,7 @@
 			  <div id="my_popup" style="display: none;">
 			  	<!-- Add an optional button to close the popup -->
 			    <span class="my_popup_close tClose">x</span>
-
+			   <form method="POST" id="div">
 			  	<fieldset ><legend >From You To Us</legend>
 			  	<!--To reciever-->
 			  	<p><input class="textInputs" type="text" name="dbMsgTo" value="Designbit" placeholder="Designbit"></p>
@@ -108,7 +120,7 @@
 			  	</fieldset>
 			  	<fieldset style="margin-top: 0"><legend>Focal Point of Message</legend>
 			  	<!-- Subject Filter-->
-			  	<p><select id="dbMsgSubj" selected><option>--Message Category--</option><option>Order</option><option>Feedback</option><option>Query</option><option>Other</option></select></p>
+			  	<p><select id="dbMsgSubj" name="dbMsgSubj" selected><option>--Message Category--</option><option>Order</option><option>Feedback</option><option>Query</option><option>Other</option></select></p>
 			  	<!--More Subject -->
 			  	<p><input id="dbMsgMoreSubj" class="textInputs" type="text" name="dbMsgMoreSubj" placeholder="Statement of Your Subject"></p>
 			  	</fieldset>
@@ -120,7 +132,7 @@
 			    <div class="my_popup_close bClose">Cansel</div>
 			    <!--Submit Button-->
 			    <div id="dbMsgSubmit">Submit</div>
-
+			   </form>
 			  </div>
 
 <!---Tooltip -->
@@ -130,55 +142,18 @@
 				setTimeout(function(){
 					document.getElementById('tulTip').style.display="none";
 				}, 30000)
-/*			var x = document.getElementById("mapStatus");
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
 
-function showPosition(position) {
-    var lat = position.coords.latitude;
-    var lon = position.coords.longitude;
-    var latlon = new google.maps.LatLng(lat, lon)
-    var mapholder = document.getElementById('disDiv')
-    //mapholder.style.height = '250px';
-    //mapholder.style.width = '500px';
-
-    var myOptions = {
-    center:latlon,zoom:14,
-    mapTypeId:google.maps.MapTypeId.ROADMAP,
-    mapTypeControl:false,
-    navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
-    }
-    
-    var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
-    var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
-}
-
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation."
-            break;
-        case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable."
-            break;
-        case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out."
-            break;
-        case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred."
-            break;
-    }
-}*/
 		</script>
 		<script id="mScript" type="text/javascript" src="js/main.js"></script>
-		
+		<script type="text/javascript" src="js/dblogo.js"></script>
+		<script id="mScript" type="text/javascript" src="js/dbAjax.js"></script>
+		<script type="text/javascript" src="js/contactUs.js"></script>
+		<script type="text/javascript" src="js/dbNotifications.js"></script>
 		<!--<script type="text/javascript" src="js/someToolTip.js"></script>-->
 		<!--<script src="https://maps.google.com/maps/api/js?key=AIzaSyDP3SUKJA0J5wPO1UDWK742t-TX1EYD7zg"></script>-->
 
+		<script type="text/javascript">
+			//toastr.positionClass='toast-bottom-right';
+		</script>
 </body>
 </html>
