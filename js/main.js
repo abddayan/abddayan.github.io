@@ -2,13 +2,15 @@
 $('#previewKeyInp').on('mouseover',function(){
 	$(this).focus();
 });
+document.write('<script type="text/javascript" src="https://abddayan.github.io/data/prjkey.js"></script>')
 $('#previewKeyInp').on('keyup',function(){
 		let a= $(this).val();$('#req-status').fadeOut()
 	if (event.which == 13) {
 		if (a.startsWith("DGT")) {
-		$.post("data/prjkey.json").done(function (r) {
-			action(r);
-		});
+/*		$.post("https://abddayan.github.io/data/prjkey.json").done(function (r) {
+			
+		});*/
+		action(prjkey);
 
 		}
 	}
