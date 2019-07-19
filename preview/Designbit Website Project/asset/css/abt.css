@@ -1,0 +1,93 @@
+html{
+	width: 100vw;height: 100vh;
+	overflow: hidden;
+}
+body{
+	box-sizing: border-box;
+	width: 100%;
+	overflow-x: hidden;
+	margin: 0;
+	background-color: rgba(5,4,60,1);
+	color: #ccc;
+	font-family: 'Libre Franklin', sans-serif;
+}
+header{
+	box-sizing: border-box;position: relative;width: 100vw;height: 50px;overflow: hidden;
+	box-shadow: 0 1px 2px grey;text-align: center;margin: 0;padding: 0;
+}
+#dbtLogo{
+	box-sizing: border-box;position: relative;width: 70px;height: 50px;
+	border-radius: 50%;box-shadow: 1px 1px 2px grey;text-align: center;font-weight: bold;
+	line-height: 50px;cursor: pointer;
+}
+#dbtLogo a{color: #ccc;text-decoration: none;}
+#dbtLogo a:hover{text-decoration: none;color: #ccc}
+.xsmbtn{box-sizing: border-box;position: absolute;top: 10px;right: 10px;cursor: pointer;
+	z-index: 1002 ;display: none;}
+header a{
+	text-decoration: none;color: #ccc;
+}
+#menubar{
+	box-sizing: border-box;position: relative;width: 100vw;height: calc(100vh - 50px);
+}
+#nav1{
+	box-sizing: border-box;position: relative;line-height: 50px;overflow: hidden;
+}
+#nav2{
+	box-sizing: border-box;position: fixed;top: 0;right: 0;width: 100%;padding: 50px 30px;
+	background-color: rgba(0,0,0,0.94);box-shadow: 0 1px 1px rgba(0,0,0,0.4);z-index: 1001;
+	display: none;
+}
+#nav ul{
+	box-sizing: border-box;position: relative;width: 100%;height: 100%;margin: 0;padding: 0;
+	list-style: none;
+}
+#nav2 ul li{
+	box-sizing: border-box;position: relative;width: 100%;min-height: 35px;height:auto;overflow: hidden;
+	padding: 15px;transition: 1.5s;cursor: pointer;text-align: left;
+}
+#nav2 ul li:hover{padding-left: 30px;color: green}
+.dbt-btn{background-color: #08075B;pointer-events: auto;
+	border-radius: 5px;cursor: pointer;padding: 5px 15px;text-align: center;font-weight: bold;
+	box-shadow: 0 0 3px #ccc;box-sizing: border-box;
+}
+.dbt-btn:hover{background-color: #080787;}
+.dbt-btn.active,.xsmi.active{color: green}
+@media(max-width: 600px){
+	header a{display: none;}
+.xsmbtn{display: inline-block;}
+}
+/***SLides***/
+.reveal{
+	height: calc(100% - 50px);
+}
+/***Who we are***/
+
+.prfpic{
+	box-sizing: border-box;position: relative;width: 100%;max-width: 150px!important;margin:0 auto;height: 144px!important;
+	border-radius: 50%;cursor: pointer;
+}
+.title{
+	box-sizing: border-box;position: relative;font-size: 32pt!important;
+}
+@media(max-width: 600px){
+	.wwa-content{margin-top: -150px;
+	height: calc(100vh - 50px);overflow: auto;
+	}
+	.reveal.center .slides section{
+		box-sizing: border-box;top: -15%!important;
+	}
+}
+/***Lightbox***/
+.dbt-lightbox{
+	box-sizing: border-box;position: fixed;top: 0;left:0;width: 100vw;height: 100vh;
+	background-color: rgba(0,0,0,0.54);cursor: pointer;z-index: 10001;display: none;
+}
+.dbt-lightbox .inner{
+	box-sizing: border-box;position: relative;width: 80%;height: 80%;margin: 50px auto;
+	background-position: center;background-size: contain;background-repeat: no-repeat;
+	background-origin: padding-box;
+}
+@media(max-width: 300px){
+	.dbt-lightbox .inner{width: 95px;height: 95px}
+}

@@ -1,0 +1,50 @@
+<style type="text/css">
+	.orgram-pic img{
+		box-sizing: border-box;position: relative;width: 75px;height: 75px;margin: 0 auto;border-radius: 50%;
+		background-color: grey;
+	}
+	#organogram-insert{
+		box-sizing: border-box;position: relative;width: 100%;
+		height: 800px;
+	}
+	.info-search{
+		height: 50px;
+	}
+	#more-organogram{text-align: center;margin-top: 30px}
+</style>
+<section id="aboutus-pg-content">
+	<form class="form-horizontal">
+	<div class="form-group">
+		<div class="col-md-12">
+			<input type="text" id="abt-info-search" placeholder="Search" class="form-control info-search">
+		</div>
+	</div>
+	</form>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron"><h3>Hi!!</h3>
+                          I'm a placeholder to an introductory text that you have to start writing about. When you're done you send me an alert via email address <a href="mailto:dyndayan7@gmail.com">dyndayan7@gmail.com</a>. Then I'll show you how to send the content to me, so it can take its place here.<hr>
+                          <mark>A suggesion of format may be:</mark><br>
+                          <q>[Introduction to the NABCO District office. Mission and objectives and daily work in the NABCO institution.
+Below is an organisational structure of the NABCO district office (Ga West)]</q>
+			<h3>Thank you; and I'll be waiting!!</h3>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="row">
+						<div class="col-sm-12">
+							<object id="organogram-insert" data="asset/page/nabco-do-organogram.html"></object>
+						</div>
+						<div id="more-organogram" class="col-sm-12">
+							<a href="#">more about NABCO Organogram</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<script type="text/javascript">
+	$('#abt-info-search').on('mouseover',function(){$(this).focus()});
+	$('#abt-info-search').on('mouseout',function(){$(this).blur()});
+</script>

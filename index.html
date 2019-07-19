@@ -17,7 +17,7 @@
 		#top-bar{
 		box-shadow: 0 5px 50px rgba(0,0,0,0.2);text-align: center;
 		}
-		#top-bar h1{margin: 0;line-height: 100px;padding-right: 160px;overflow: hidden;height: 100%;}
+		#top-bar h1{margin: 0;line-height: 100px;padding-right: 160px;overflow: hidden;height: 100%;text-shadow: 1px 2px 1px green}
 		#prfpic{
 			box-sizing: border-box;position: absolute;top:0;right: 0;
 			width: 150px;height: 100%;border-radius: 50%;box-shadow: 0 0 10px rgba(0,0,0,0.2);transform: skewX(-10deg);
@@ -44,6 +44,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox=
 		}
 		footer{
 			box-shadow: 0 -5px 50px rgba(0,0,0,0.2);
+		background-image: url("img/LBLC.JPG");background-position: left;background-attachment: local;background-repeat: no-repeat;background-size: contain;
 		}
 		footer p{
 			text-align: center;font-weight: bold;text-shadow: 1px 1px 1px grey;font-size: 14pt;line-height: 100px;
@@ -57,7 +58,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox=
 			max-height: calc(100vh - 100px);overflow: auto;
 		}
 		#suxmodal h3{text-align: center;color: green}
-		#suxmodal li{min-height: 50px;cursor: default;}
+		#suxmodal li{min-height: 50px;cursor: default;margin: 15px 0;}
 		@media(max-width: 600px){
 			#top-bar h1{
 				font-size: 12pt;
@@ -80,18 +81,19 @@ background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox=
 
 		}
 	</style>
-	<script type="text/javascript" src="https://abddayan.github.io/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<!--https://abddayan.github.io-->
 </head>
 <body>
 	<header id="top-bar" class="sections hedafuta">
-		<h1>Welcome to Abd's Project Preview Page</h1>
+		<h1 title="Welcome to Abd's Project Preview Page">Welcome to Abd's Project Preview Page</h1>
 		<img id="prfpic" src="img/abd.jpg">
 	</header>
 	<section id="body" class="sections">
 		<div id="inp-container">
 			<div class="inner">
 				<div id="req-status"></div>
-			<input id="previewKeyInp" type="search" placeholder="Enter Key, press Enter" autofocus>
+			<input id="previewKeyInp" type="search" placeholder="Enter Key, press Enter" title="Enter the project Key. And then press Enter" autofocus>
 			</div>
 		</div>
 	</section>
@@ -102,6 +104,6 @@ background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox=
 		<ul>
 		</ul>
 	</div>
-	<script type="text/javascript" src="https://abddayan.github.io/js/main.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

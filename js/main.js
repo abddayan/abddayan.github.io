@@ -2,7 +2,7 @@
 $('#previewKeyInp').on('mouseover',function(){
 	$(this).focus();
 });
-document.write('<script type="text/javascript" src="https://abddayan.github.io/data/prjkey.js"></script>')
+document.write('<script type="text/javascript" src="data/prjkey.js"></script>')
 $('#previewKeyInp').on('keyup',function(){
 		let a= $(this).val();$('#req-status').fadeOut()
 	if (event.which == 13) {
@@ -18,7 +18,7 @@ $('#previewKeyInp').on('keyup',function(){
 			if(d[a]){
 				if (d[a].enabled) {
 				let b= d[a].name;
-				let c= d[a].initDate;c="Updated "+c;
+				let c= d[a].initDate;c="Set for review since "+new Date(c).toGMTString();
 				let e= d[a].owner;
 				let f= d[a].url;
 				//trigger success modal;
@@ -43,3 +43,10 @@ $('#previewKeyInp').on('keyup',function(){
 			}
 	}
 });
+
+setInterval(function(){console.log('in')
+const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
+	let a= ['1px 2px 1px rgba(0,0,0,0.2)','1px 2px 1px green','1px 2px 1px red','1px 2px 1px blue'];
+	let b= getRandomInt(3);
+	document.querySelector('#top-bar h1').style.textShadow=a[b];
+},400);
