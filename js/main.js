@@ -7,9 +7,6 @@ $('#previewKeyInp').on('keyup',function(){
 		let a= $(this).val();$('#req-status').fadeOut()
 	if (event.which == 13) {
 		if (a.startsWith("DGT")) {
-/*		$.post("https://abddayan.github.io/data/prjkey.json").done(function (r) {
-			
-		});*/
 		action(prjkey);
 
 		}
@@ -44,9 +41,9 @@ $('#previewKeyInp').on('keyup',function(){
 	}
 });
 
-setInterval(function(){console.log('in')
+setInterval(function(){
 const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
 	let a= ['1px 2px 1px rgba(0,0,0,0.2)','1px 2px 1px green','1px 2px 1px red','1px 2px 1px blue'];
-	let b= getRandomInt(3);
+	let b= getRandomInt(4);
 	document.querySelector('#top-bar h1').style.textShadow=a[b];
 },400);
