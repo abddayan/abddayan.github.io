@@ -22,15 +22,15 @@ Reveal.initialize({
 					{ src: '../set/reveal/plugin/notes/notes.js', async: true },
 					{ src: '../set/reveal/plugin/highlight/highlight.js', async: true }
 				],
-				loop:true,Flags:false,autoSlide:3000,backgroundTransition:'convex',
+				loop:true,Flags:false,autoSlide:15000,backgroundTransition:'convex',
 				//parallaxBackgroundImage:"../img/elephant.jpg",parallaxBackgroundSize:'100% 100%',
 				//parallaxBackgroundHorizontal:100,parallaxBackgroundVertical:50
 			});
 Reveal.addEventListener( 'slidechanged', function( event ) {
 	// event.fragment = the fragment DOM element;
-	if ( event.indexh == 0) {$('.dbt-btn, .xsmi').removeClass('active');$('._1st-slide').addClass('active')}else
-		if ( event.indexh == 1) {$('.dbt-btn, .xsmi').removeClass('active');$('._2nd-slide').addClass('active')}else
-			if ( event.indexh == 2) {$('.dbt-btn, .xsmi').removeClass('active');$('._3rd-slide').addClass('active')}else{
+	if ( event.indexh == 0 ) {$('.dbt-btn, .xsmi').removeClass('active');$('._1st-slide').addClass('active')}else
+		if ( event.indexh == 1 ) {$('.dbt-btn, .xsmi').removeClass('active');$('._2nd-slide').addClass('active')}else
+			if ( event.indexh == 2 ) {$('.dbt-btn, .xsmi').removeClass('active');$('._3rd-slide').addClass('active')}else{
 				$('.dbt-btn, .xsmi').removeClass('active');$('._4th-slide').addClass('active')
 			}
 } );

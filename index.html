@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Abd's Project Preview</title>
+	<link rel="stylesheet" type="text/css" href="font/icon/css/style.css">
 	<style type="text/css">
 		html,body{
 			box-sizing: border-box;position: relative;width: 100vw;height:100vh; background-color: #fff;color: #333;margin: 0;
@@ -15,9 +16,9 @@
 			height: 100px;
 		}
 		#top-bar{
-		box-shadow: 0 5px 50px rgba(0,0,0,0.2);text-align: center;
+		box-shadow: 0 5px 50px rgba(0,0,0,0.2);text-align: center;overflow: hidden;
 		}
-		#top-bar h1{margin: 0;line-height: 100px;padding-right: 160px;overflow: hidden;height: 100%;text-shadow: 1px 2px 1px green}
+		#top-bar h1{margin: 0;line-height: 100px;padding-right: 160px;overflow: hidden;height: 100%;text-shadow: 1px 2px 1px green;cursor: default;}
 		#prfpic{
 			box-sizing: border-box;position: absolute;top:0;right: 0;
 			width: 150px;height: 100%;border-radius: 50%;box-shadow: 0 0 10px rgba(0,0,0,0.2);transform: skewX(-10deg);
@@ -61,6 +62,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox=
 		#suxmodal li{min-height: 50px;cursor: default;margin: 15px 0;}
 		@media(max-width: 600px){
 			#top-bar h1{
+				line-height: 24px;
 				font-size: 12pt;
 			}
 			.inner{
@@ -72,7 +74,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox=
 		}
 		@media(max-width: 300px){
 			#top-bar h1{
-				line-height: 24px;
+				line-height: 14px;
 				padding: 15px 160px 15px 10px;overflow: hidden!important;
 			}
 			#suxmodal ul{
@@ -80,6 +82,16 @@ background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox=
 			}
 
 		}
+		#abdul-contact{
+			box-sizing: border-box;position: fixed;top: 0;left: 0;width: 100vw;height:100vh;overflow: hidden;z-index: 100;pointer-events: none;
+		}
+		#abdul-contact *{box-sizing: border-box;}
+		#abdul-contact ul{position: absolute;margin: 0;padding: 0;width: 200px;height: 150px;border-radius: 4px;box-shadow: 0 0 5px rgba(0,0,0,0.2);background-color: #fff;text-align: center;pointer-events: auto;display: none;outline: none;}
+		#abdul-contact h3{position: relative;width: 100%;text-align: center;}
+		#abdul-contact li{position: relative;display: inline-block;margin: 5px;}
+		#abdul-contact li a{text-decoration: none;outline: none;}
+		#abdul-contact li a:focus{transform: scale(1.5);}
+		#abdul-contact li img{width: 32px;height: 32px;border-radius: 50%;}
 	</style>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<!--https://abddayan.github.io-->
@@ -102,6 +114,16 @@ background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox=
 	</footer>
 	<div id="suxmodal">
 		<ul>
+		</ul>
+	</div>
+	<div id="abdul-contact">
+		<ul tabindex="1">
+			<h3>Contact Abdul</h3>
+			<li title="Phone: +233501364421"><a tabindex="1" href="tel:+233501364421"><img src="font/icon/phone.svg"></a></li>
+			<li title="Email: dyndayan7@gmail.com"><a tabindex="1" href="mailto:dyndayan7@gmail.com"><img src="font/icon/email.svg"></a></li>
+			<li title="Facebook"><a tabindex="1" href="https://web.facebook.com/AbdulDayan.Safianu"><img src="font/icon/facebook.svg"></a></li>
+			<li title="Twitter"><a tabindex="1" href="https://twitter.com/dyndayan7"><img src="font/icon/twitter.svg"></a></li>
+			<li title="More of Abd"><a tabindex="1" href="https://about.me/abddayan"><img src="font/icon/more_hori.svg"></a></li>
 		</ul>
 	</div>
 	<script type="text/javascript" src="js/main.js"></script>

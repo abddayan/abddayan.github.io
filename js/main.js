@@ -47,3 +47,46 @@ const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
 	let b= getRandomInt(4);
 	document.querySelector('#top-bar h1').style.textShadow=a[b];
 },400);
+$(function(){
+
+var ctxmPositioner= function(e) {
+		if (e) {
+		let ww=window.innerWidth;
+  		let wh=window.innerHeight;
+		let l=event.x;
+		  let t=event.y;
+		  if ((ww-l)<200) {
+		  	if ( l<200 ) {
+		  		let a= ww - 200;let b= a/2;let c= (200/l)*10;let d= b+c;
+		  		$('#abdul-contact ul').css({left:d});
+		  	}else {
+		  		let a= ww-200;
+		    	$('#abdul-contact ul').css({left:a});
+		  	}
+		  }else{
+		    $('#abdul-contact ul').css({left:l})
+		  }
+		  if ((wh-t)<150) {
+		  	if ( t<150) {
+		  		let a= wh - 200;let b= a/2;let c= (200/h)*10;let d= b+c;
+		  		$('#abdul-contact ul').css({top:d});
+		  	}else {
+		  		let a= wh-150;
+		    	$('#abdul-contact ul').css({top:a})
+		  	}
+		  }else{
+		    $('#abdul-contact ul').css({top:t})
+		  }
+		}
+		return true;
+}
+$(window).on('click focusout',function(){$('#abdul-contact ul').css('display','none').focusout();});
+$(window).on('keyup',function(){if (event.which==27) {$('#abdul-contact ul').css('display','none').focusout();}})
+$('#abdul-contact ul').on('click',function(){event.stopPropagation()})
+$('body').on('contextmenu',function(){
+	event.preventDefault();
+	if (ctxmPositioner(event)) {
+		$('#abdul-contact ul').css('display','block').focusin();
+	}
+})
+})
