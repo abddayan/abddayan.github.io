@@ -323,13 +323,13 @@ function initmap(dn,loc,adr, callback) {
 			return DBTMap;
 		}
 
-	initmap("Designbit",[5.603502, -0.185909],"3rd Street, Ga West, Greater Accra, Ghana",function(map,marker,circle){
+	initmap("Designbit",[5.703917, -0.300823],"3rd Street, Ga West, Greater Accra, Ghana",function(map,marker,circle){
 			$('#hotline-sm-btn').appendTo('.leaflet-top.leaflet-left');
 			$('#map-dir-btn').appendTo('.leaflet-top.leaflet-right');
 		//loc GAR;
-		var dbtAmasama= {abs:[5.01036,-0.01023],rlt:"3rd Street, Ga West, Greater Accra, Ghana",plc:"Amasama"};
-		var dbtTema= {abs:[5.13686,-0.153871],rlt:"Community One, Tema Metro, Greater Accra, Ghana",plc:"Tema"};
-		var dbtWa= {abs:[11.01324,2.18361],rlt:"Upper West Region, Ghana.",plc:"Wa"};
+		var dbtAmasama= {abs:[5.703917, -0.300823],rlt:"3rd Street, Ga West <span class='dir-nb'>(District)</span>, Greater Accra, Ghana",plc:"Amasama"};
+		var dbtTema= {abs:[5.653053, 0.026986],rlt:"Tema Newtown <span class='dir-nb'>(Area)</span>, Tema <span class='dir-nb'>(City)</span>, Tema Metropolitan <span class='dir-nb'>(District)</span>, Greater Accra, Ghana",plc:"Tema Newtown"};
+		var dbtWa= {abs:[10.068974,-2.502324],rlt:"Kambali <span class='dir-nb'>(Street)</span>, Wa, Wa Municipal <span class='dir-nb'>(District)</span>, Upper West Region, Ghana.",plc:"Wa"};
 		var dbtSavelugu= {abs:[11.01324,2.18361],rlt:"Northern Region, Ghana.",plc:"Savelugu"};
 		$('#dbt-lws-amasama').data('loc',dbtAmasama);
 		$('#dbt-lws-tema').data('loc',dbtTema);
@@ -342,9 +342,9 @@ function initmap(dn,loc,adr, callback) {
 		});
 		var switchLoc= function(abs,rlt,plc,contain=false) {marker.remove();
 			if ( rlt&&plc ) {var dirtxt= "<b><h2 class='dbt-poptitle'>Designbit @ "+plc+"</h2></b><br>"+rlt;
-			$('#dbt-adrs-text').text('Designbit, '+rlt).animateCss('bounceInUp');
+			$('#dbt-adrs-text').html('Designbit, '+rlt).animateCss('bounceInUp');
 			}else {var dirtxt="<h2 class='geog-poptitle'>Designbit</h2>";
-			$('#dbt-adrs-text').text('Designbit').animateCss('bounceInUp');
+			$('#dbt-adrs-text').html('Designbit').animateCss('bounceInUp');
 			}
 			L.marker(abs,{attribution:"Location data: Designbit",alt:"location marker"}).addTo(map)
 				  .bindPopup(dirtxt).openPopup();
@@ -412,7 +412,7 @@ $('#ft-a-btn-intro').on('click',function(){
 });
 //*********DBT CTXM*****/
 $(function(){
-	var showCtxm= function(title,list,callback,event) {
+	var showCtxm= function(title,list,callback,event,target=$('#dbtCtxm ul')) {
 		$('.dbt-ovl').css('display','none').removeClass('active');
 		$('#dbtCtxm ul').empty();
 		let o= false;
@@ -430,20 +430,34 @@ $(function(){
 			render(list);
 		}
 		if (event) {
+			let e=event;
 		let ww=window.innerWidth;
   		let wh=window.innerHeight;
-		let l=event.x;
-		  let t=event.y;
-		  if ((ww-l)<255) {
-		    $('#dbtCtxm ul').css({right:ww-l,left:'unset'})
+		let l=e.x;
+		  let t=e.y;
+		  if ((ww-l)<250) {
+		  	if ( l<250 ) {
+		  		let a= ww - 250;let b= a/2;let c= (250/l)*10;let d= b+c;
+		  		target.css({left:d});
+		  	}else {
+		  		let a= ww-250;
+		    	target.css({left:a});
+		  	}
 		  }else{
-		    $('#dbtCtxm ul').css({left:l,right:'unset'})
+		    target.css({left:l})
 		  }
 		  if ((wh-t)<300) {
-		    $('#dbtCtxm ul').css({bottom:wh-t,top:'unset'})
+		  	if ( t<300) {
+		  		let a= wh - 300;let b= a/2;let c= (300/t)*10;let d= b+c;
+		  		target.css({top:d});
+		  	}else {
+		  		let a= wh-300;
+		    	target.css({top:a})
+		  	}
 		  }else{
-		    $('#dbtCtxm ul').css({top:t,bottom:'unset'})
+		    target.css({top:t})
 		  }
+		
 		}
 		$('#dbtCtxm').css('display','block').addClass('active').focus();
 		$('#dbtCtxm li').on('click',function(){exitCtxm();});
@@ -463,43 +477,43 @@ $(function(){
 	//USAGE;
 	//{icon:'',text:'',id:''}
 	$('#dbtAboutus').on('contextmenu',function(){
-		let data= [{icon:'asset/img/prfpic/abdDayan1.png',text:'Abd Dayan',id:'dbt-abdDayan'},{icon:'account_circle',text:'Abdul Rauf',id:'dbt-abdulRauf'},{icon:'account_circle',text:'Abdul Rahim',id:'dbt-abdulRahim'},{icon:'account_circle',text:'Issah',id:'dbt-issah'}];
+		let data= [{icon:'asset/img/prfpic/abdDayan-02.png',text:'Abd Dayan',id:'dbt-abdDayan'},{icon:'asset/img/prfpic/abdulRauf-01.jpg',text:'Abdul Rauf',id:'dbt-abdulRauf'},{icon:'asset/img/prfpic/yakubu-01.jpg',text:'Yakubu',id:'dbt-yakubu'},{icon:'asset/img/prfpic/issah-01.jpg',text:'Issah',id:'dbt-issah'}];
 		let title= 'Get Personal';
 		showCtxm(title,data,function(o){
-			o.find('#dbt-abdDayan').on('click',function(){$('#dbtFaces-slides').slick('slickGoTo',0,true);$('#dbt-abt-abddayan').animateCss('flash',function(){$(this).removeClass('flash')})});
-			o.find('#dbt-abdulRauf').on('click',function(){$('#dbtFaces-slides').slick('slickGoTo',1,true);$('#dbt-abt-abdulrauf').animateCss('flash',function(){$(this).removeClass('flash')})});
-			o.find('#dbt-abdulRahim').on('click',function(){$('#dbtFaces-slides').slick('slickGoTo',2,true);$('#dbt-abt-abdulrahim').animateCss('flash',function(){$(this).removeClass('flash')})});
-			o.find('#dbt-issah').on('click',function(){$('#dbtFaces-slides').slick('slickGoTo',3,true);$('#dbt-abt-issah').animateCss('flash',function(){$(this).removeClass('flash')})});
+			o.find('#dbt-abdDayan').on('click',function(){$('#dbtAboutus').focus();$('#dbtFaces-slides').slick('slickGoTo',0,true);$('#dbt-abt-abddayan').animateCss('flash',function(){$(this).removeClass('flash');})});
+			o.find('#dbt-abdulRauf').on('click',function(){$('#dbtAboutus').focus();$('#dbtFaces-slides').slick('slickGoTo',1,true);$('#dbt-abt-abdulrauf').animateCss('flash',function(){$(this).removeClass('flash');})});
+			o.find('#dbt-yakubu').on('click',function(){$('#dbtAboutus').focus();$('#dbtFaces-slides').slick('slickGoTo',2,true);$('#dbt-abt-yakubu').animateCss('flash',function(){$(this).removeClass('flash');})});
+			o.find('#dbt-issah').on('click',function(){$('#dbtAboutus').focus();$('#dbtFaces-slides').slick('slickGoTo',3,true);$('#dbt-abt-issah').animateCss('flash',function(){$(this).removeClass('flash');})});
 		},event);
 	});
 	$('#dbtservices').on('contextmenu',function(){
 		let data= [{icon:'account_circle',text:'Web Design',id:'ctxm-webdesign'},{icon:'account_circle',text:'Architectural Design',id:'ctxm-arctdesign'},{icon:'account_circle',text:'GIS and Map Design',id:'ctxm-gismapdesign'},{icon:'account_circle',text:'Graphic Design',id:'ctxm-grphdesign'}];
 		let title= 'Our Serice In:';
 		showCtxm(title,data,function(o){
-			o.find('#ctxm-webdesign').on('click',function(){$('#svsWDesign-mi').trigger('click')});
-			o.find('#ctxm-arctdesign').on('click',function(){$('#svsADesign-mi').trigger('click')});
-			o.find('#ctxm-gismapdesign').on('click',function(){$('#svsGDesign-mi').trigger('click')});
-			o.find('#ctxm-grphdesign').on('click',function(){$('#svsGrphDesign-mi').trigger('click')});
+			o.find('#ctxm-webdesign').on('click',function(){$('#dbtservices').focus();$('#svsWDesign-mi').trigger('click')});
+			o.find('#ctxm-arctdesign').on('click',function(){$('#dbtservices').focus();$('#svsADesign-mi').trigger('click')});
+			o.find('#ctxm-gismapdesign').on('click',function(){$('#dbtservices').focus();$('#svsGDesign-mi').trigger('click')});
+			o.find('#ctxm-grphdesign').on('click',function(){$('#dbtservices').focus();$('#svsGrphDesign-mi').trigger('click')});
 		},event);
 	});
 	$('#dbtprojects').on('contextmenu',function(){
 		let data= [{icon:'account_circle',text:'Web Design',id:'ctxm-webdesign'},{icon:'account_circle',text:'Architectural Design',id:'ctxm-arctdesign'},{icon:'account_circle',text:'GIS and Map Design',id:'ctxm-gismapdesign'},{icon:'account_circle',text:'Graphic Design',id:'ctxm-grphdesign'}];
 		let title= 'Our Projects In:';
 		showCtxm(title,data,function(o){
-			o.find('#ctxm-webdesign').on('click',function(){$('#prjWDesign-mi').trigger('click')});
-			o.find('#ctxm-arctdesign').on('click',function(){$('#prjADesign-mi').trigger('click')});
-			o.find('#ctxm-gismapdesign').on('click',function(){$('#prjGDesign-mi').trigger('click')});
-			o.find('#ctxm-grphdesign').on('click',function(){$('#prjGrphDesign-mi').trigger('click')});
+			o.find('#ctxm-webdesign').on('click',function(){$('#dbtprojects').focus();$('#prjWDesign-mi').trigger('click')});
+			o.find('#ctxm-arctdesign').on('click',function(){$('#dbtprojects').focus();$('#prjADesign-mi').trigger('click')});
+			o.find('#ctxm-gismapdesign').on('click',function(){$('#dbtprojects').focus();$('#prjGDesign-mi').trigger('click')});
+			o.find('#ctxm-grphdesign').on('click',function(){$('#dbtprojects').focus();$('#prjGrphDesign-mi').trigger('click')});
 		},event);
 	});
 	$('#welcomScreen').on('contextmenu',function(){
 		let data= [{icon:'account_circle',text:'Web Design',id:'ctxm-webdesign'},{icon:'account_circle',text:'Architectural Design',id:'ctxm-arctdesign'},{icon:'account_circle',text:'GIS and Map Design',id:'ctxm-gismapdesign'},{icon:'account_circle',text:'Graphic Design',id:'ctxm-grphdesign'}];
 		let title= 'Your Formidable Partner In:';
 		showCtxm(title,data,function(o){
-			o.find('#ctxm-webdesign').on('click',function(){wlcmpackLiHover($($('#designpack li')[0])) });
-			o.find('#ctxm-arctdesign').on('click',function(){wlcmpackLiHover($($('#designpack li')[1])) });
-			o.find('#ctxm-gismapdesign').on('click',function(){wlcmpackLiHover($($('#designpack li')[2])) });
-			o.find('#ctxm-grphdesign').on('click',function(){ wlcmpackLiHover($($('#designpack li')[3])) });
+			o.find('#ctxm-webdesign').on('click',function(){$('#welcomScreen').focus();wlcmpackLiHover($($('#designpack li')[0])) });
+			o.find('#ctxm-arctdesign').on('click',function(){$('#welcomScreen').focus();wlcmpackLiHover($($('#designpack li')[1])) });
+			o.find('#ctxm-gismapdesign').on('click',function(){$('#welcomScreen').focus();wlcmpackLiHover($($('#designpack li')[2])) });
+			o.find('#ctxm-grphdesign').on('click',function(){$('#welcomScreen').focus(); wlcmpackLiHover($($('#designpack li')[3])) });
 		},event);
 	});
 	function wlcmpackLiHover(o){
@@ -512,10 +526,10 @@ $(function(){
 		let data= [{icon:'account_circle',text:'Features',id:'ctxm-features'},{icon:'account_circle',text:'Services',id:'ctxm-services'},{icon:'account_circle',text:'Projects',id:'ctxm-projects'},{icon:'account_circle',text:'Happy Customers',id:'ctxm-testimony'}];
 		let title= 'Jump To:';
 		showCtxm(title,data,function(o){
-			o.find('#ctxm-features').on('click',function(){document.location.href='#dbtfeatures'; });
-			o.find('#ctxm-services').on('click',function(){document.location.href='#dbtservices'; });
-			o.find('#ctxm-projects').on('click',function(){document.location.href='#dbtprojects'; });
-			o.find('#ctxm-testimony').on('click',function(){ document.location.href='#dbtestimony'; });
+			o.find('#ctxm-features').on('click',function(){$('#dbtfeatures').focus();document.location.href='#dbtfeatures'; });
+			o.find('#ctxm-services').on('click',function(){$('#dbtfeatures').focus();document.location.href='#dbtservices'; });
+			o.find('#ctxm-projects').on('click',function(){$('#dbtfeatures').focus();document.location.href='#dbtprojects'; });
+			o.find('#ctxm-testimony').on('click',function(){$('#dbtfeatures').focus(); document.location.href='#dbtestimony'; });
 		setTimeout(function() {$('#dbtCtxm').css('display','block').addClass('active').focus();}, 100);
 		},event);
 	})
@@ -581,48 +595,3 @@ $('#dbtDir-inner').on('click',function() {
 });
 
 })
-
-/*Some scroll snippet
-$.fn.scrollView = function () {
-  return this.each(function () {
-    $('html, body').animate({
-      scrollTop: $(this).offset().top
-    }, 1000);
-  });
-}
-$('#your-element').scrollView();
-*/
-/*$(document).ready(function() {
-    var $element = $('#bubble');
-    var newText = 'In this example, bubbleText takes the inner html of $element (initially empty), and animates it into this new text. The effect is the phrase being displayed letter by letter, in place.';
-
-    bubbleText({
-        element: $element,
-        newText: newText,
-        speed: 3000,
-        repeat: Infinity,
-    });
-});
-$(document).ready(function() {
-    var $element = $('#bubble');
-    var phrases = [
-        'This is how bubbleText works.',
-        'Animating each letter in a friendly way',
-        'Thanks for seeing it :)',
-        'It really matters to me ...',
-        'Regards,',
-        'Guedes, Washington L.',
-    ];
-    var index = -1;
-    (function loopAnimation() {
-        index = (index + 1) % phrases.length;
-        bubbleText({
-            element: $element,
-            newText: phrases[index],
-            letterSpeed: 70,
-            callback: function() {
-                setTimeout(loopAnimation, 1000);
-            },
-        });
-    })();
-});*/

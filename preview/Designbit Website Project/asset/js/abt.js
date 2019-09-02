@@ -1,5 +1,5 @@
 //***tOP BAR***/
-$('#dbtLogo').on('click',function(){window.location.href="../../index.html"});
+$('#dbtLogo').on('click',function(){window.location.href="index.html"});
 $('.xsmbtn').on('click', function(){
 	if ($(this).hasClass('active')) {
 		$('#nav2').hide();

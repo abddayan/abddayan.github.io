@@ -3,11 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>Abd's Project Preview</title>
-	<link rel="stylesheet" type="text/css" href="font/icon/css/style.css">
+	<link rel="stylesheet" type="text/css" href="font/LibreFranklin-Light.ttf">
+	<link rel="stylesheet" type="text/css" href="font/Sacramento-Regular.ttf">
 	<style type="text/css">
 		html,body{
 			box-sizing: border-box;position: relative;width: 100vw;height:100vh; background-color: #fff;color: #333;margin: 0;
-			overflow: hidden;
+			overflow: hidden;font-family: 'LibreFranklin-Light Script'
 		}
 		.sections{
 			box-sizing: border-box;position: relative;width: 100%;;
@@ -16,12 +17,12 @@
 			height: 100px;
 		}
 		#top-bar{
-		box-shadow: 0 5px 50px rgba(0,0,0,0.2);text-align: center;overflow: hidden;
+		box-shadow: 0 5px 30px rgba(0,0,0,0.2);text-align: center;overflow: hidden;
 		}
 		#top-bar h1{margin: 0;line-height: 100px;padding-right: 160px;overflow: hidden;height: 100%;text-shadow: 1px 2px 1px green;cursor: default;}
 		#prfpic{
 			box-sizing: border-box;position: absolute;top:0;right: 0;
-			width: 150px;height: 100%;border-radius: 50%;box-shadow: 0 0 10px rgba(0,0,0,0.2);transform: skewX(-10deg);
+			width: 150px;height: 100%;border-radius: 50%;box-shadow: 0 0 -5px rgba(0,0,0,0.2);transform: skewX(-10deg);border:none;
 		}
 		#body{
 			height: calc(100vh - 200px);
@@ -41,10 +42,10 @@ background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox=
 		#previewKeyInp{
 			box-sizing: border-box;position: relative;width: 100%;height: 40px;
 			padding: 0 20px;outline: none;border:none;
-			box-shadow: 0 0 50px rgba(0,0,0,0.2);
+			box-shadow: 0 0 30px rgba(0,0,0,0.2);
 		}
 		footer{
-			box-shadow: 0 -5px 50px rgba(0,0,0,0.2);
+			box-shadow: 0 -5px 30px rgba(0,0,0,0.2);
 		background-image: url("img/LBLC.JPG");background-position: left;background-attachment: local;background-repeat: no-repeat;background-size: contain;
 		}
 		footer p{
@@ -82,19 +83,42 @@ background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox=
 			}
 
 		}
-		#abdul-contact{
-			box-sizing: border-box;position: fixed;top: 0;left: 0;width: 100vw;height:100vh;overflow: hidden;z-index: 100;pointer-events: none;
+		.abd-ovl{
+			box-sizing: border-box;position: fixed;top: 0;left: 0;width: 100vw;height:100vh;overflow: hidden;z-index: 100;
+
 		}
+		#abdul-contact{pointer-events: none;}
 		#abdul-contact *{box-sizing: border-box;}
-		#abdul-contact ul{position: absolute;margin: 0;padding: 0;width: 200px;height: 150px;border-radius: 4px;box-shadow: 0 0 5px rgba(0,0,0,0.2);background-color: #fff;text-align: center;pointer-events: auto;display: none;outline: none;}
-		#abdul-contact h3{position: relative;width: 100%;text-align: center;}
+		#abdul-contact ul{position: absolute;margin: 0;padding: 0;width: 200px;height: 150px;border-radius: 4px;box-shadow: 0 0 5px rgba(0,0,0,0.2);background-color: #fff;text-align: center;pointer-events: auto;display: none;outline: none;background-color: rgb(250,250,250);}
+		#abdul-contact h3{position: relative;width: 100%;text-align: center;font-family: 'Sacramento', cursive;font-weight: normal;color: #fff;cursor: default;margin: 10px 0 }
 		#abdul-contact li{position: relative;display: inline-block;margin: 5px;}
 		#abdul-contact li a{text-decoration: none;outline: none;}
 		#abdul-contact li a:focus{transform: scale(1.5);}
 		#abdul-contact li img{width: 32px;height: 32px;border-radius: 50%;}
+		#abd-notice-board{
+			display: flex;pointer-events: none;
+		}
+		#abd-notice-board *{box-sizing: border-box;position: relative;}
+		.abd-inner{width: 100%;height: 100%;}
+		#abd-notice-board .content{top: 100px;margin: 0;pointer-events: auto;
+			width: 100%;height: 100px ;padding: 30px;background-color: #333;
+			color: #fff;line-height: 24px;text-align: center;cursor: default;word-spacing: 3px;font-size: 13pt;overflow-y: auto;overflow-x: hidden;word-break: break-all;word-wrap: break-word;font-weight: 250;letter-spacing: 1.5px;display: none;
+		}
 	</style>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<!--https://abddayan.github.io-->
+
+	<!-- MailerLite Universal -->
+<script>
+(function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+_.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+
+var ml_account = ml('accounts', '1653596', 'g8x2t2j4b1', 'load');
+</script>
+<!-- End MailerLite Universal -->
 </head>
 <body>
 	<header id="top-bar" class="sections hedafuta">
@@ -105,7 +129,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox=
 		<div id="inp-container">
 			<div class="inner">
 				<div id="req-status"></div>
-			<input id="previewKeyInp" type="search" placeholder="Enter Key, press Enter" title="Enter the project Key. And then press Enter" autofocus>
+			<input id="previewKeyInp" type="search" placeholder="Enter Key, press Enter" title="Enter the project Key. And then press Enter" autofocus autocomplete>
 			</div>
 		</div>
 	</section>
@@ -116,15 +140,20 @@ background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox=
 		<ul>
 		</ul>
 	</div>
-	<div id="abdul-contact">
+	<div id="abdul-contact" class="abd-ovl">
 		<ul tabindex="1">
-			<h3>Contact Abdul</h3>
+			<h3 title="Contact Abdul">Contact Abdul</h3>
 			<li title="Phone: +233501364421"><a tabindex="1" href="tel:+233501364421"><img src="font/icon/phone.svg"></a></li>
 			<li title="Email: dyndayan7@gmail.com"><a tabindex="1" href="mailto:dyndayan7@gmail.com"><img src="font/icon/email.svg"></a></li>
 			<li title="Facebook"><a tabindex="1" href="https://web.facebook.com/AbdulDayan.Safianu"><img src="font/icon/facebook.svg"></a></li>
 			<li title="Twitter"><a tabindex="1" href="https://twitter.com/dyndayan7"><img src="font/icon/twitter.svg"></a></li>
 			<li title="More of Abd"><a tabindex="1" href="https://about.me/abddayan"><img src="font/icon/more_hori.svg"></a></li>
 		</ul>
+	</div>
+	<div id="abd-notice-board" class="abd-ovl">
+		<div class="abd-inner">
+			<p class="content"></p>
+		</div>
 	</div>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>

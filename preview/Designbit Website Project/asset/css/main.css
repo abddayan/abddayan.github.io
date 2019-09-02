@@ -147,10 +147,14 @@ h1,h4{text-align: center;margin: 50px 0;line-height: 24px}
 .wwa-content{
 	box-sizing: border-box;position: relative;width: 100%;height:250px;overflow: auto;
 }
-#wwa-prf-pic{
-	background-image: url("../img/prfpic/abdDayan1.png");
+.wwa-prf-pic{
 	background-position: center;background-clip: content-box;background-repeat: no-repeat;background-size: contain;
 }
+#dbt-abt-abddayan .wwa-prf-pic{background-image: url("../img/prfpic/abdDayan-02.png");}
+#dbt-abt-abdulrauf .wwa-prf-pic{background-image: url("../img/prfpic/abdulRauf-01.jpg");}
+#dbt-abt-yakubu .wwa-prf-pic{background-image: url("../img/prfpic/yakubu-01.jpg");}
+#dbt-abt-issah .wwa-prf-pic{background-image: url("../img/prfpic/issah-01.jpg");}
+
 #wwa-prf-intro{
 	padding: 10px;line-height: 24px;
 }
@@ -169,7 +173,7 @@ h1,h4{text-align: center;margin: 50px 0;line-height: 24px}
 }
 .feature-text{
 	box-sizing: border-box;position: relative;width: 100%;padding:10px 10px 10px 70px;
-	height: 250px;line-height: 24px;
+	line-height: 24px;
 }
 /***Services***/
 #dbtservices .dbt-col-inner{
@@ -271,7 +275,7 @@ h1,h4{text-align: center;margin: 50px 0;line-height: 24px}
 }
 #dbtestimony h1{margin-top: 0}
 #dbtestimony .dbt-col-inner{
-	min-height: 350px;
+	min-height: 100px;
  }
 .testimonies{position: relative;margin-top: 50px;}
 .testimonies img{
@@ -328,8 +332,9 @@ footer{
 #dbt-hotline-disp{
 	box-sizing: border-box;position: absolute;top:15px;left:15px;width: 250px;min-height: 350px;
 	background-color: #05043C;padding-left: 15px;padding-bottom: 30px;
-	z-index: 799;opacity: 34%;
+	z-index: 799;opacity: 34%;transition: 1.2s;
 }
+#dbt-hotline-disp:hover{opacity: 100%}
 #dbt-hotline-disp .row{margin-top: 15px}
 #dbt-hotline-disp a{text-decoration: none;margin-top: 10px;display: inline-block;color: rgb(150,150,150);}
 #dbt-hotline-disp a:hover{text-decoration: none;}
@@ -374,6 +379,9 @@ footer{
 .ctxm-title{
 	box-sizing: border-box;position: relative;display: block;
 	font-weight: bold;font-size: 13pt;
+}
+.dir-nb{
+	font-size: 8pt;color: #ccc;
 }
 /***Direction***/
 #map-dir-btn{

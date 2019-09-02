@@ -2,23 +2,24 @@
 $('#previewKeyInp').on('mouseover',function(){
 	$(this).focus();
 });
-document.write('<script type="text/javascript" src="data/prjkey.js"></script>')
-$('#previewKeyInp').on('keyup',function(){
+document.write('<script type="text/javascript" src="data/prjkey.js"></script>');
+
+$(function(){
+	$('#previewKeyInp').on('keyup',function(){
 		let a= $(this).val();$('#req-status').fadeOut()
 	if (event.which == 13) {
 		if (a.startsWith("DGT")) {
 		action(prjkey);
-
 		}
 	}
 	function action(d) {
 			if(d[a]){
+			localStorage.setItem('ppkey',a);
 				if (d[a].enabled) {
 				let b= d[a].name;
 				let c= d[a].initDate;c="Set for review since "+new Date(c).toGMTString();
 				let e= d[a].owner;
 				let f= d[a].url;
-				//trigger success modal;
 				let o='<h3>Success</h3>\
 			<li><label>Name: </label><span>'+b+'</span></li>\
 			<li><label>Status: </label><span>'+c+'</span></li>\
@@ -26,13 +27,18 @@ $('#previewKeyInp').on('keyup',function(){
 			<li></li>\
 			<li>We'+"'"+'re fetching the preview...</li>';
 			$('#suxmodal ul').html(o);$('#suxmodal').fadeIn();
-				setTimeout(function() {
-				//close modal and direct to preview page;
-				document.location.href=f;
-				}, 5000);
+			$('body').data('url',f);
+				if (d[a].note) {showNotice(d[a].note,15000,function(){
+					//setTimeout(function() {
+					document.location.href=f;
+					//}, 16000);
+
+				}
+				)}
 
 				}else{
-			$('#req-status').html("Sorry!! This project is not open to preview at the moment!").addClass("req-disabled").fadeIn();
+				if (d[a].note) {showNotice(d[a].note,10000)}
+			$('#req-status').html("Sorry!! This project is not open to preview at the moment! Please contact your developer.<br><i>Thank you.</i>").addClass("req-disabled").fadeIn();
 				}
 			}else{
 			$('#req-status').html("Sorry!! The key is inalid!").addClass("req-invalid").fadeIn();
@@ -47,14 +53,37 @@ const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
 	let b= getRandomInt(4);
 	document.querySelector('#top-bar h1').style.textShadow=a[b];
 },400);
+let nobj= 'noticeboard obj';
+	var showNotice= function(note,time=1500,callback){
+		$('#abd-notice-board .content').html(note);
+		$('#abd-notice-board .content').slideDown();
+		$('#abd-notice-board').addClass('active');
+		 nobj= setTimeout(function() {hideNotice(0,callback);}, time);
+	}
+	var hideNotice= function(delay=0,callback) {
+		nobj= setTimeout(function() {
+		$('#abd-notice-board .content').slideUp();
+		$('#abd-notice-board .content').empty();
+		$('#abd-notice-board').removeClass('acitve');
+		 	if (typeof callback == 'function') {callback();}else if(d=$('body').data('url')) {document.location.href=d;}
+		}, delay);
+	}
+	$('#abd-notice-board .content').on('dblclick contextmenu', function(){
+		hideNotice();
+	});
+	var pauseNotice= function(){window.clearTimeout(nobj)}
+	$('#abd-notice-board .content').on('mouseover',function(){pauseNotice();})
+	$('#abd-notice-board .content').on('mouseout',function(){hideNotice(5000)});
+})	
+
 $(function(){
 
 var ctxmPositioner= function(e) {
 		if (e) {
 		let ww=window.innerWidth;
   		let wh=window.innerHeight;
-		let l=event.x;
-		  let t=event.y;
+		let l=e.x;
+		  let t=e.y;
 		  if ((ww-l)<200) {
 		  	if ( l<200 ) {
 		  		let a= ww - 200;let b= a/2;let c= (200/l)*10;let d= b+c;
@@ -68,7 +97,7 @@ var ctxmPositioner= function(e) {
 		  }
 		  if ((wh-t)<150) {
 		  	if ( t<150) {
-		  		let a= wh - 200;let b= a/2;let c= (200/h)*10;let d= b+c;
+		  		let a= wh - 200;let b= a/2;let c= (200/t)*10;let d= b+c;
 		  		$('#abdul-contact ul').css({top:d});
 		  	}else {
 		  		let a= wh-150;
@@ -80,7 +109,7 @@ var ctxmPositioner= function(e) {
 		}
 		return true;
 }
-$(window).on('click focusout',function(){$('#abdul-contact ul').css('display','none').focusout();});
+$('body').on('click focusout',function(){$('#abdul-contact ul').css('display','none').focusout();});
 $(window).on('keyup',function(){if (event.which==27) {$('#abdul-contact ul').css('display','none').focusout();}})
 $('#abdul-contact ul').on('click',function(){event.stopPropagation()})
 $('body').on('contextmenu',function(){
@@ -89,4 +118,8 @@ $('body').on('contextmenu',function(){
 		$('#abdul-contact ul').css('display','block').focusin();
 	}
 })
-})
+});
+if (d=localStorage.getItem('ppkey')) {
+	$('#previewKeyInp').attr('value',d);
+	$('#req-status').html("Huh! I though of this key. If I'm right press Enter to continue</i>").addClass("req-disabled").fadeIn();
+}
