@@ -29,12 +29,9 @@ $(function(){
 			$('#suxmodal ul').html(o);$('#suxmodal').fadeIn();
 			$('body').data('url',f);
 				if (d[a].note) {showNotice(d[a].note,15000,function(){
-					//setTimeout(function() {
 					document.location.href=f;
-					//}, 16000);
-
 				}
-				)}
+				)}else{document.location.href=f;}
 
 				}else{
 				if (d[a].note) {showNotice(d[a].note,10000)}
