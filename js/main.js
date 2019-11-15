@@ -118,5 +118,5 @@ $('body').on('contextmenu',function(){
 });
 if (d=localStorage.getItem('ppkey')) {
 	$('#previewKeyInp').attr('value',d);
-	$('#req-status').html("Huh! I though of this key. If I'm right press Enter to continue</i>").addClass("req-disabled").fadeIn();
+	$('#req-status').html("Huh! I thought of this key. If I'm right press Enter to continue</i>").addClass("req-disabled").fadeIn();
 }

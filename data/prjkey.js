@@ -19,7 +19,7 @@ prjkey={
 		name:"Designbit Website Project",
 		initDate:1563508381214,
 		owner:"Designbit",
-		enabled:true,
+		enabled:false,
 		url:"preview/Designbit Website Project/index.html",
 		note:false
 	}
