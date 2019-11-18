@@ -13,7 +13,7 @@ prjkey={
 		owner:"NABCO-Ga West District Office",
 		enabled:false,
 		url:"preview/NABCO-Ga West Website Project/index.html",
-		note:'Project is being moved to a new site...'
+		note:'Project was moved to a new site @ <a href="https://nabcogawest.com">nabcogawest.com</a>'
 	},
 	DGT5b4a35f3ea010d628671:{
 		name:"Designbit Website Project",
